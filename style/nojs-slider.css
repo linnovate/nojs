@@ -1,0 +1,84 @@
+
+
+/*###############################################################
+                        slider (style)
+###############################################################*/
+
+body {
+  padding: 50px;
+  background: black;
+  text-align: center;
+}
+
+slider {
+  margin: 0 auto;
+  height: 450px;
+  width: 80%;
+  clear: both;
+}
+
+/* -- slider -- */
+
+body:hover slider {
+  -webkit-transform: perspective(440px) rotateX(0deg);
+}
+slider {
+  overflow: hidden;
+  border: 5px solid rgb(19, 0, 0);
+  box-shadow: 0px 0px 30px 25px rgb(13, 131, 103);
+  -webkit-transition: all .7s;
+  -webkit-transform: perspective(700px) rotateX(35deg);
+}
+
+/* -- slide -- */
+
+slide {
+  position: absolute;
+  left: -100%;
+  top: 0;
+  display: block;  
+  -webkit-transition: all .7s;
+}
+slide img {
+  height: 100%;
+  width: 100%;
+}
+[slide-target]:checked ~ slide {
+  left: 100%;
+  pointer-events: none;
+}
+[slide-target]:checked + slide {
+  left:0;
+  z-index: 5;
+}
+
+/* -- slide-target  -- */
+
+[slide-target] { cursor: pointer; }
+[slide-target]:before,[slide-target]:after {
+  border-radius: 100% 0 0 100%;
+  background: black;
+  box-shadow: 0px 0px 5px 2px rgb(13, 131, 103);
+  text-shadow: 1px 2px 5px rgb(3, 0, 82);
+  padding: 0 10px;
+  font-size: 40px;
+  color: white;
+  -webkit-transition: -webkit-transform 100ms;
+}
+[slide-target]:active:before,
+[slide-target]:active:after,
+[slide-target]:hover:before,
+[slide-target]:hover:after{
+  box-shadow: 0px 0px 10px 5px #680223;
+}
+[slide-target]:after{
+  right: -5px;
+}
+[slide-target]:before {
+  border-radius: 0 100% 100% 0;
+  left: -5px;
+}
+
+
+
+

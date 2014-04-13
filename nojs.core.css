@@ -1,0 +1,144 @@
+
+
+/*###############################################################
+                            slider
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+ *
+ * <slider> 
+ * 
+ *   <input slide-target type="radio" name="groupName" checked>
+ *   <slide> <img/> </slide>
+ *
+ *   <input slide-target type="radio" name="groupName">
+ *   <slide> <img/> </slide>
+ *  
+ *   <input slide-target type="radio" name="groupName">
+ *   <slide> <img/> </slide>
+ *    
+ * </slider>
+ *
+*/
+
+
+/* -- 1 slider:slide -- */
+
+slider { 
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+slide { 
+  width: 1000px;
+  height: 500px;
+}
+
+/* -- 2 slider:treger -- */
+
+[slide-target] { width: 0; height: 0; margin: 0; }
+[slide-target]:before,[slide-target]:after {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 50px;
+}
+[slide-target]:before { content: '<'; left: 0; right: auto;  }
+[slide-target]:after  { content: '>'; left: auto;    right:0;  }
+
+/* -- 3 slider:click -- */
+
+slide { display: none; }
+
+/* Loop: last next */
+[slide-target] ~ [slide-target]:after { display: none; }
+
+/* Loop: first pevr */
+[slide-target] ~ [slide-target]:checked ~ [slide-target]:before { display: none; }
+
+/* display */
+[slide-target]:checked + slide,
+[slide-target]:checked ~ [slide-target]:after {
+  display: block;
+}
+[slide-target]:checked:after,
+[slide-target]:checked:before,
+[slide-target]:checked ~ [slide-target] ~ [slide-target]:after { 
+  display: none; 
+}
+
+
+/*###############################################################
+                       slider + lightbox
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+ *
+ * <slider> 
+ *
+ *   <!------- slide 1 ------->
+ *   <input slide-target type="radio" name="groupName" checked>
+ *   <slide> <img/> </slide>
+ *
+ *   <input lightbox-target type="radio" name="lightboxGroupName"> 
+ *   <lightbox> <img/> </lightbox>
+ *
+ *   <!------- slide 2 ------->
+ *   <input slide-target type="radio" name="groupName">
+ *   <slide> <img/> </slide>
+ *
+ *   <input lightbox-target type="radio" name="lightboxGroupName"> 
+ *   <lightbox> <img/> </lightbox>
+ *
+ *   <!------- slide 3 ------->
+ *   <input slide-target type="radio" name="groupName">
+ *   <slide> <img/> </slide>
+ *
+ *   <input lightbox-target type="radio" name="lightboxGroupName"> 
+ *   <lightbox> <img/> </lightbox>
+ *    
+ * </slider>
+ *
+*/
+
+[lightbox-target] { width: 0; height: 0; margin: 0; }
+[lightbox-target]:before, [lightbox-target]:after {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  font-size: 50px;
+}
+[lightbox-target]:before { content: '<'; left: 0; right: auto;  }
+[lightbox-target]:after  { content: '>'; left: auto;    right:0;  }
+
+/* -- 3 slider:click -- */
+
+lightbox { display: none; }
+[lightbox-target]:checked { display: block; }
+[lightbox-target]:checked
+[lightbox-target]:before, [lightbox-target]:after
+
+/* Loop: last next */
+[lightbox-target] ~ [lightbox-target]:after { display: none; }
+
+/* Loop: first pevr */
+[lightbox-target] ~ [lightbox-target]:checked ~ [lightbox-target]:before { display: none; }
+
+/* display */
+[lightbox-target]:checked + lightbox,
+[lightbox-target]:checked ~ [lightbox-target]:after {
+  display: block;
+}
+[lightbox-target]:checked:after,[lightbox-target]:checked:before,
+[lightbox-target]:checked ~ [lightbox-target] ~ [lightbox-target]:after { 
+  display: none; 
+}
+
+
+
