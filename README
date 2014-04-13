@@ -1,1 +1,47 @@
-nojs
+
+  HTML Sintaxs : slider-nojs
+  --------------------------------------------------------------
+ 
+  <slider> 
+  
+    <input slide-target type="radio" name="groupName" checked>
+    <slide> <img/> </slide>
+ 
+    <input slide-target type="radio" name="groupName">
+    <slide> <img/> </slide>
+   
+    <input slide-target type="radio" name="groupName">
+    <slide> <img/> </slide>
+     
+  </slider>
+ 
+
+  --------------------------------------------------------------
+  HTML Sintaxs : slider-nojs + lightbox-nojs
+  --------------------------------------------------------------
+
+  <slider> 
+ 
+    <!------- slide 1 ------->
+    <input slide-target type="radio" name="groupName" checked>
+    <slide> <img/> </slide>
+ 
+    <input lightbox-target type="radio" name="lightboxGroupName"> 
+    <lightbox> <img/> </lightbox>
+ 
+    <!------- slide 2 ------->
+    <input slide-target type="radio" name="groupName">
+    <slide> <img/> </slide>
+ 
+    <input lightbox-target type="radio" name="lightboxGroupName"> 
+    <lightbox> <img/> </lightbox>
+ 
+    <!------- slide 3 ------->
+    <input slide-target type="radio" name="groupName">
+    <slide> <img/> </slide>
+ 
+    <input lightbox-target type="radio" name="lightboxGroupName"> 
+    <lightbox> <img/> </lightbox>
+     
+  </slider>
+/
