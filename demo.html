@@ -2,50 +2,94 @@
 <html>
   <head>
     <title>Nojs - DEMO</title>
+    <link href="demo.css" rel="stylesheet">
     <link href="nojs.core.css" rel="stylesheet">
     <link href="style/nojs-slider.css" rel="stylesheet">
     <link href="style/nojs-lightbox.css" rel="stylesheet">
   </head>
    <body>
 
+			<input name="main-menu" type="radio" id="home" />
+			<input name="main-menu" type="radio" id="about"/>
+			<input name="main-menu" type="radio" id="plugins" checked/>
+			<input name="main-menu" type="radio" id="games"/>
+			<input name="main-menu" type="radio" id="blog"/>
+
+			<input name="sub-menu" type="radio" id="slider" checked/>
+			<input name="sub-menu" type="radio" id="search"/>
+
+
+			<menu id="main-menu">
+				<label for="home"   >Home</label>
+				<label for="about"  >About</label>
+				<label for="plugins">
+					<span>Plugins</span>
+					<menu class="sub-menu">
+						<label for="slider"  >Sldier</label>
+						<label for="search">Lightbox</label>
+						<label for="search"    >Menu</label>
+						<label for="search"  >Search</label>
+					</menu>
+				</label>
+				<label for="games"  >
+					<span>Games</span>
+					<menu class="sub-menu">
+						<label for="search"  >text 1</label>
+						<label for="search">text 2</label>
+					</menu>
+				</label>
+				<label for="blog"   >Blog</label>
+			</menu>
+
       <slider>
-        <!--<input type="radio" name="lightbox" id="close" checked >-->
+        <!--<input type="radio" name="lightbox" id="close" checked >
 
         <!------- slide 1 ------->
         <input slide-target type="radio" name="slider" checked/>
         <slide><img src="images/1.jpg" /></slide>
-
+<!-------
         <input lightbox-target type="checkbox" name="lightbox">
         <lightbox><img src="images/1.jpg" /></lightbox>
-        
+------->        
         <!------- slide 2 ------->
         <input slide-target type="radio" name="slider"/>
         <slide><img src="images/2.jpg" /></slide>
-
+<!------- 
         <input lightbox-target type="checkbox" name="lightbox">
         <lightbox><img src="images/2.jpg" /></lightbox>
-
+------->
         <!------- slide 3 ------->
         <input slide-target type="radio" name="slider"/>
         <slide><img src="images/3.jpg" /></slide>
-
+<!-------
         <input lightbox-target type="checkbox" name="lightbox">
         <lightbox><img src="images/3.jpg" /></lightbox>
-
+------->
         <!------- slide 4 ------->
         <input slide-target type="radio" name="slider"/>
         <slide><img src="images/4.jpg" /></slide>
-
+<!-------
         <input lightbox-target type="checkbox" name="lightbox">
         <lightbox><img src="images/4.jpg" /></lightbox>
-
+------->
         <!------- slide 5 ------->
         <input slide-target type="radio" name="slider"/>
         <slide><img src="images/5.jpg" /></slide>
-
+<!-------
         <input lightbox-target type="checkbox" name="lightbox">
         <lightbox><img src="images/5.jpg" /></lightbox>
+------->
       </slider>
+
+<section>
+</section>
+
+<section>
+</section>
+
+<section>
+</section>
+
 
   </body>
 </html>

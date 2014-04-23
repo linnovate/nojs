@@ -5,7 +5,6 @@
 ###############################################################*/
 
 body {
-  padding: 50px;
   background: black;
   text-align: center;
 }
@@ -13,21 +12,23 @@ body {
 slider {
   margin: 0 auto;
   height: 450px;
-  width: 80%;
+	width: 100%;
+	max-width: 1000px;
   clear: both;
 }
 
 /* -- slider -- */
 
 body:hover slider {
-  -webkit-transform: perspective(440px) rotateX(0deg);
+ // -webkit-transform: perspective(440px) rotateX(0deg);
 }
 slider {
+  margin-top: 150px;
   overflow: hidden;
   border: 5px solid rgb(19, 0, 0);
-  box-shadow: 0px 0px 30px 25px rgb(13, 131, 103);
+  box-shadow: 0px 0px 30px 25px rgb(109, 84, 82);
   -webkit-transition: all .7s;
-  -webkit-transform: perspective(700px) rotateX(35deg);
+ //-webkit-transform: perspective(700px) rotateX(35deg);
 }
 
 /* -- slide -- */
@@ -58,7 +59,7 @@ slide img {
 [slide-target]:before,[slide-target]:after {
   border-radius: 100% 0 0 100%;
   background: black;
-  box-shadow: 0px 0px 5px 2px rgb(13, 131, 103);
+  box-shadow: 0px 0px 5px 2px rgb(109, 84, 82);
   text-shadow: 1px 2px 5px rgb(3, 0, 82);
   padding: 0 10px;
   font-size: 40px;

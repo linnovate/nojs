@@ -1,0 +1,101 @@
+
+input[name="main-menu"],input[name="sub-menu"]{
+display:none;
+}
+
+menu#main-menu {
+	margin: 0 auto;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 7%;
+	padding: 0;
+	display: table;
+	width: 100%;
+	max-width: 900px;
+	background-color: #742E00;
+	-moz-box-shadow:  -1px 0px 15px 0px #9E5200;
+	-webkit-box-shadow: -1px 0px 15px 0px #9E5200;
+	box-shadow:  -1px 0px 15px 0px #9E5200;
+	//border-radius: 100px 0;
+	/*overflow: hidden;*/
+	z-index: 1000;
+}
+
+menu#main-menu > label {
+	vertical-align: middle;
+	display: table-cell;
+	border: 1px solid #7A5743;
+	border-right: 1px solid #000000;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+	font-size: 1.2em;
+	line-height: 3;
+  font-weight: 600;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+}
+
+menu#main-menu > label {
+
+}
+
+menu#main-menu > label:hover,
+input#plugins:checked ~ menu#main-menu  label[for="plugins"] {
+    background-color: #92683A;
+    border-top-color: #92683A;
+}
+
+menu#main-menu > label:hover menu,
+input#plugins:checked ~ menu#main-menu label[for="plugins"] menu{
+border: 1px solid #555;
+	font-size: 1.1em;
+}
+
+menu#main-menu .sub-menu {
+	display: none;
+	display: table;
+	position: absolute;
+	top: 60px;	
+	padding: 0;
+	font-size: 0;
+	margin: 0 auto;
+
+	background-color: rgba(255, 255, 255, 0.5);
+	color: rgb(97, 0, 0);
+	//border-radius: 5px 47px;
+	z-index: -1;
+	  -webkit-transition: top 200ms;
+  -moz-transition: top 200ms;
+  -ms-transition: top 200ms;
+  -o-transition: top 200ms;
+  transition: top 200ms;
+/*	overflow: hidden;*/
+
+}
+
+menu#main-menu .sub-menu label:hover,
+input#slider:checked ~ menu#main-menu  label[for="slider"]{
+	background-color: rgba(107, 107, 107, 0.5);
+}
+
+menu#main-menu .sub-menu label{
+	vertical-align: middle;
+	display: table-cell;
+		padding: 0 20px;
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+}
+slider{
+display: none !important;
+}
+/*input#plugins:checked ~*/
+ input#slider:checked ~ slider {
+	display: block !important;
+}
