@@ -109,4 +109,38 @@ display: none !important;
  input#slider:checked ~ slider {
 	display: block !important;
 }
+#home-page{
+display: none;
 
+
+}
+input#home:checked ~ #home-page {
+	display: block;
+}/*
+logo:before { content: "no-js"; }
+logo:after { content: "nojs"; }
+logo:hover:before { content: "nojs"; }
+logo:hover:after { content: "nojs";}*/
+
+logo {
+	display: block;
+		margin-top: 75px;
+	-webkit-transform: perspective(840px) rotateY(-360deg) rotateX(63deg) rotateZ(27deg) ;
+	-webkit-transition: all 15s;
+	-moz-transition: all 15s;
+	-ms-transition: all 15s;
+	-o-transition: all 15s;
+	transition: all 15s;
+	color: white;
+	font-size: 10em;
+	text-shadow: 15px 19px 7px rgba(255, 255, 255, 0.5);
+	background-color: rgba(255, 255, 255, 0.25);
+	box-shadow: 0 0 740px 240px rgb(66, 66, 66);
+	border: 10px solid rgba(0, 0, 0, 0.25);
+}
+logo:hover{
+margin-top: 0;
+		-webkit-transform: perspective(440px) rotateY(0deg) rotateX(360deg) rotateZ(0)  ;
+font-size: 25em;
+border-radius: 0 900px;
+}
