@@ -11,13 +11,13 @@
 
 			<input name="main-menu" type="radio" id="home" />
 			<input name="main-menu" type="radio" id="about"/>
-			<input name="main-menu" type="radio" id="plugins" checked/>
+			<input name="main-menu" type="radio" id="plugins"/>
 			<input name="main-menu" type="radio" id="games"/>
 			<input name="main-menu" type="radio" id="blog"/>
 
-			<input name="sub-menu" type="radio" id="slider" checked/>
-			<input name="sub-menu" type="radio" id="search"/>
-
+			<input name="sub-menu" type="radio" id="slider" />
+			<input name="sub-menu" type="radio" id="search" checked/>
+			<input name="sub-menu" type="radio" id="test"/>
 
 			<menu id="main-menu">
 				<label for="home"   >Home</label>
@@ -26,16 +26,16 @@
 					<span>Plugins</span>
 					<menu class="sub-menu">
 						<label for="slider"  >Sldier</label>
-						<label for="search">Lightbox</label>
-						<label for="search"    >Menu</label>
-						<label for="search"  >Search</label>
+						<label for="search">Search</label>
+						<label for="test"    >Menu</label>
+						<label for="test"  >Lightbox</label>
 					</menu>
 				</label>
 				<label for="games"  >
 					<span>Games</span>
 					<menu class="sub-menu">
-						<label for="search"  >text 1</label>
-						<label for="search">text 2</label>
+						<label for="test"  >text 1</label>
+						<label for="test">text 2</label>
 					</menu>
 				</label>
 				<label for="blog"   >Blog</label>
@@ -80,6 +80,88 @@
         <lightbox><img src="images/5.jpg" /></lightbox>
 ------->
       </slider>
+
+ 			<search>
+
+				<style>
+
+
+					search hr{margin-top: 50px;}
+					[search-target] { width: 160px;
+					height: 0;
+					margin: 0; 
+					}
+
+					[search-target]:before{
+						content: attr(data-label);
+						color: rgb(46, 29, 0);
+						padding: 13px 50px;
+						background-color: antiquewhite;
+						border-radius: 0 100px;
+					}
+
+					[search-target]:hover:before {
+					background-color: rgb(218, 125, 1);
+					}
+
+					[search] {
+						width:0;
+						height: 150px;
+						float: left;
+						-webkit-transition: all .7s;
+						-moz-transition: all .7s;
+						-ms-transition: all .7s;
+						-o-transition: all .7s;
+						transition: all .7s;
+					}
+					search { 
+						width: 100%;
+						max-width: 1025px;
+						margin: auto;
+						min-height: 600px;
+					}	
+					[search] img { width: 100%;  height: 100%;}
+					[search] { /*display:none;*/ }
+
+					[search-target="all"]:checked	~ [search],
+					[search-target="test-1"]:checked	~ [search*="test-1"],
+					[search-target="test-2"]:checked	~ [search*="test-2"],
+					[search-target="test-3"]:checked	~ [search*="3"],
+					[search-target="test-4"]:checked	~ [search*="test-4"] { 
+						width: 225px;
+						border: 1px solid #e4e4e4;
+						padding: 5px;
+						margin: 9px;
+						background-color: rgba(255, 255, 255, 0.5);
+					}
+				</style>
+
+				<input data-label="all" search-target="all" type="radio" name="search" checked/>
+        <input data-label="test-1" search-target="test-1" type="radio" name="search" />
+        <input data-label="test-2" search-target="test-2" type="radio" name="search"/>
+        <input data-label="test-3" search-target="test-3" type="radio" name="search"/>
+        <input data-label="test-4" search-target="test-4" type="radio" name="search"/>
+
+				<hr/>
+
+        <div search="test-1 test-2 3"><img src="images/1.jpg" /></div>
+        <div search="test-3 test-2"><img src="images/2.jpg" /></div>
+        <div search="test-1 test-2"><img src="images/3.jpg" /></div>
+        <div search="test-3 test-3"><img src="images/4.jpg" /></div>
+        <div search="test-1 test-2"><img src="images/5.jpg" /></div>
+        <div search="test-3 test-4"><img src="images/1.jpg" /></div>
+        <div search="test-1 test-2"><img src="images/2.jpg" /></div>
+        <div search="test-4 test-2"><img src="images/3.jpg" /></div>
+        <div search="test-1 test-3"><img src="images/4.jpg" /></div>
+        <div search="test-1 test-2"><img src="images/5.jpg" /></div>
+        <div search="test-5 test-2"><img src="images/1.jpg" /></div>
+        <div search="test-1 test-3"><img src="images/2.jpg" /></div>
+        <div search="test-8 test-2"><img src="images/3.jpg" /></div>
+        <div search="test-1 test-1"><img src="images/4.jpg" /></div>
+        <div search="test-1 test-2"><img src="images/5.jpg" /></div>
+
+      </search>
+
 
 <section>
 </section>

@@ -1,4 +1,12 @@
 
+
+body {
+  background: black;
+  text-align: center;
+	padding-top: 120px;
+}
+
+
 input[name="main-menu"],input[name="sub-menu"]{
 display:none;
 }
@@ -48,9 +56,9 @@ input#plugins:checked ~ menu#main-menu  label[for="plugins"] {
     background-color: #92683A;
     border-top-color: #92683A;
 }
-
-menu#main-menu > label:hover menu,
-input#plugins:checked ~ menu#main-menu label[for="plugins"] menu{
+/*,
+input#plugins:checked ~ menu#main-menu label[for="plugins"] menu*/
+menu#main-menu > label:hover menu{
 border: 1px solid #555;
 	font-size: 1.1em;
 }
@@ -75,7 +83,7 @@ menu#main-menu .sub-menu {
   transition: top 200ms;
 /*	overflow: hidden;*/
 
-} 
+}
 
 menu#main-menu .sub-menu label:hover,
 input#slider:checked ~ menu#main-menu  label[for="slider"]{
@@ -92,10 +100,13 @@ menu#main-menu .sub-menu label{
   -o-transition: all 200ms;
   transition: all 200ms;
 }
+search,
 slider{
 display: none !important;
 }
 /*input#plugins:checked ~*/
+ input#search:checked ~ search,
  input#slider:checked ~ slider {
 	display: block !important;
 }
+

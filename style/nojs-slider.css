@@ -4,10 +4,6 @@
                         slider (style)
 ###############################################################*/
 
-body {
-  background: black;
-  text-align: center;
-}
 
 slider {
   margin: 0 auto;
@@ -23,7 +19,6 @@ body:hover slider {
  // -webkit-transform: perspective(440px) rotateX(0deg);
 }
 slider {
-  margin-top: 150px;
   overflow: hidden;
   border: 5px solid rgb(19, 0, 0);
   box-shadow: 0px 0px 30px 25px rgb(109, 84, 82);
