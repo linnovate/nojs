@@ -75,7 +75,7 @@ menu#main-menu .sub-menu {
   transition: top 200ms;
 /*	overflow: hidden;*/
 
-}
+} 
 
 menu#main-menu .sub-menu label:hover,
 input#slider:checked ~ menu#main-menu  label[for="slider"]{
