@@ -4,89 +4,206 @@
     <title>Nojs - DEMO</title>
     <link href="demo.css" rel="stylesheet">
     <link href="nojs.core.css" rel="stylesheet">
+    <link href="style/nojs-menu.css" rel="stylesheet">
     <link href="style/nojs-slider.css" rel="stylesheet">
     <link href="style/nojs-lightbox.css" rel="stylesheet">
   </head>
    <body>
 
-			<input name="main-menu" type="radio" id="home"  checked/>
-			<input name="main-menu" type="radio" id="about"/>
-			<input name="main-menu" type="radio" id="plugins"/>
-			<input name="main-menu" type="radio" id="games"/>
-			<input name="main-menu" type="radio" id="blog"/>
+		<!----------------------------------------- main-menu ------------------------------------> 
 
-			<input name="main-menu" type="radio" id="slider" />
-			<input name="main-menu" type="radio" id="search"/>
-			<input name="main-menu" type="radio" id="test"/>
+		<menu nojs-menu="main-menu">
+		  <li><a class="active" href="#home">home</a></li>
+		  <li><a href="#about">about</a></li>
+		  <li><a>plugins</a>
+				<menu>
+				 <a class="active" href="#slider">Slider</a>
+				 <a href="#lightbox">Lightbox</a>
+				 <a class="active" href="#menu">Menu</a>
+				 <a href="#tabs">Tabs</a>
+				 <a class="active" href="#search">Search</a>
+		 		</menu>
+			</li>
+			<li><a>games</a>
+				<menu>
+				 <a href="#game1">game 1</a>
+				 <a href="#game2">game 2</a>
+		 		</menu>
+			</li>
+			<li><a href="#blog">blog</a></li>
+		</menu>
 
-			<menu id="main-menu">
-				<label for="home"   >Home</label>
-				<label for="about"  >About</label>
-				<label for="plugins">
-					<span>Plugins</span>
-					<menu class="sub-menu">
-						<label for="slider"  >Slider</label>
-						<label for="search">Search</label>
-						<label for="test"    >Menu</label>
-						<label for="test"  >Lightbox</label>
-					</menu>
-				</label>
-				<label for="games"  >
-					<span>Games</span>
-					<menu class="sub-menu">
-						<label for="test"  >text 1</label>
-						<label for="test">text 2</label>
-					</menu>
-				</label>
-				<label for="blog"   >Blog</label>
-			</menu> 
+		<!-------------------------------------------- home ------------------------------------> 
 
+		<section nojs-menu-section id="home">
 
-<section id="home-page">
- <logo n="n" o="o" j="j" s="s">NOJS</logo>
+			<logo n="n" o="o" j="j" s="s">NOJS</logo>
 
-</section>
+		</section>
 
+		<!-------------------------------------------- about ------------------------------------> 
 
-      <slider>
-        <!--<input type="radio" name="lightbox" id="close" checked >
+		<section nojs-menu-section id="about">
 
-        <!------- slide 1 ------->
-        <input slide-target type="radio" name="slider" checked/>
-        <slide><img src="images/1.jpg" /></slide>
-<!-------
-        <input lightbox-target type="checkbox" name="lightbox">
-        <lightbox><img src="images/1.jpg" /></lightbox>
-------->        
-        <!------- slide 2 ------->
-        <input slide-target type="radio" name="slider"/>
-        <slide><img src="images/2.jpg" /></slide>
-<!------- 
-        <input lightbox-target type="checkbox" name="lightbox">
-        <lightbox><img src="images/2.jpg" /></lightbox>
-------->
-        <!------- slide 3 ------->
-        <input slide-target type="radio" name="slider"/>
-        <slide><img src="images/3.jpg" /></slide>
-<!-------
-        <input lightbox-target type="checkbox" name="lightbox">
-        <lightbox><img src="images/3.jpg" /></lightbox>
-------->
-        <!------- slide 4 ------->
-        <input slide-target type="radio" name="slider"/>
-        <slide><img src="images/4.jpg" /></slide>
-<!-------
-        <input lightbox-target type="checkbox" name="lightbox">
-        <lightbox><img src="images/4.jpg" /></lightbox>
-------->
-        <!------- slide 5 ------->
-        <input slide-target type="radio" name="slider"/>
-        <slide><img src="images/5.jpg" /></slide>
-<!-------
-        <input lightbox-target type="checkbox" name="lightbox">
-        <lightbox><img src="images/5.jpg" /></lightbox>
-------->
-      </slider>
+		</section>
+
+		<!-------------------------------------------- slider ------------------------------------> 
+
+		<section nojs-menu-section id="slider">
+
+			<article>
+		    <slider nojs-slider="style-scroll-left">
+
+		      <!------- slide 1 ------->
+		      <input nojs-slide-click type="radio" name="slider1" checked/>
+		      <slide><img src="images/1.jpg" /></slide>
+
+		      <!------- slide 2 ------->
+		      <input nojs-slide-click type="radio" name="slider1"/>
+		      <slide><img src="images/2.jpg" /></slide>
+
+		      <!------- slide 3 ------->
+		      <input nojs-slide-click type="radio" name="slider1"/>
+		      <slide><img src="images/3.jpg" /></slide>
+
+		      <!------- slide 4 ------->
+		      <input nojs-slide-click type="radio" name="slider1"/>
+		      <slide><img src="images/4.jpg" /></slide>
+
+		      <!------- slide 5 ------->
+		      <input nojs-slide-click type="radio" name="slider1"/>
+		      <slide><img src="images/5.jpg" /></slide>
+
+		    </slider>
+			</article>
+		
+			<article>
+		    <slider nojs-slider>
+
+		      <!------- slide 1 ------->
+		      <input nojs-slide-click type="radio" name="slider2" checked/>
+		      <slide><img src="images/1.jpg" /></slide>
+
+		      <!------- slide 2 ------->
+		      <input nojs-slide-click type="radio" name="slider2"/>
+		      <slide><img src="images/2.jpg" /></slide>
+
+		      <!------- slide 3 ------->
+		      <input nojs-slide-click type="radio" name="slider2"/>
+		      <slide><img src="images/3.jpg" /></slide>
+
+		      <!------- slide 4 ------->
+		      <input nojs-slide-click type="radio" name="slider2"/>
+		      <slide><img src="images/4.jpg" /></slide>
+
+		      <!------- slide 5 ------->
+		      <input nojs-slide-click type="radio" name="slider2"/>
+		      <slide><img src="images/5.jpg" /></slide>
+
+		    </slider>
+			</article>
+
+		</section>
+
+		<!---------------------------------------- lightbox ------------------------------------> 
+
+		<section nojs-menu-section id="lightbox">
+
+		</section>
+
+		<!-------------------------------------------- menu ------------------------------------> 
+
+		<section nojs-menu-section id="menu">
+
+			<!--<article class="mac">
+				<menu nojs-menu="mac">
+				  <li><a id="home" href="#home">home</a></li>
+				  <li><a href="#about">about</a></li>
+					<li><a href="#home">home</a></li>
+					<li><a href="#home">home</a></li>
+				</menu>
+			</aricle>-->
+
+			<article>
+				<menu nojs-menu="d3">
+				  <li><a id="home" href="#home">home</a></li>
+				  <li><a href="#about">about</a>
+						<menu>
+						 <a href="#contact">contact</a>
+						 <a href="#contact_info">info</a>
+				 		</menu>
+					</li>
+					<li><a href="#home">home</a></li>
+					<li><a href="#home">home</a></li>
+				</menu>
+			</article>
+
+			<article>
+				<menu nojs-menu="main">
+				  <li><a id="home" href="#home">home</a></li>
+				  <li><a href="#about">about</a>
+						<menu>
+						 <a href="#contact">contact</a>
+						 <a href="#contact_info">info</a>
+				 		</menu>
+					</li>
+					<li><a href="#home">home</a></li>
+					<li><a href="#home">home</a></li>
+				</menu>
+			</article>
+
+			<article>
+				<input nojs-menu type="checkbox"/> 
+				<menu nojs-menu>
+				  <li><a href="#home" id="home">home</a></li>
+				  <li><a href="#about">about</a>
+						<menu>
+						 <a href="#contact">contact</a>
+						 <a href="#contact_info">info</a>
+				 		</menu>
+					</li>
+				</menu>
+			</article>
+
+			<article>
+		 		<menu nojs-menu>
+				  <li><a id="home" href="#home">home</a></li>
+				  <li><a href="#about">about</a>
+						<menu>
+						 <a href="#contact">contact</a>
+						 <a href="#contact_info">info</a>
+				 		</menu>
+					</li>
+					<li><a href="#home">home</a></li>
+					<li><a href="#home">home</a></li>
+				</menu>
+			</article>
+
+			<article>
+				<menu nojs-menu="fixed">
+				  <li><a id="home" href="#home">home</a></li>
+				  <li><a href="#about">about</a>
+						<menu>
+						 <a href="#contact">contact</a>
+						 <a href="#contact_info">info</a>
+				 		</menu>
+					</li>
+					<li><a href="#home">home</a></li>
+					<li><a href="#home">home</a></li>
+				</menu>
+			</article>
+
+		</section>
+
+		<!-------------------------------------------- tabs ------------------------------------> 
+
+		<section nojs-menu-section id="tabs">
+
+		</section>
+
+		<!------------------------------------------ search ------------------------------------> 
+
+		<section nojs-menu-section id="search">
 
  			<search>
 
@@ -169,16 +286,25 @@
 
       </search>
 
+		</section>
 
-<section>
-</section>
+		<!-------------------------------------------- game1 ------------------------------------> 
 
-<section>
-</section>
+		<section nojs-menu-section id="game1">
 
-<section>
-</section>
+		</section>
+
+		<!-------------------------------------------- game2 ------------------------------------> 
+
+		<section nojs-menu-section id="game2">
+
+		</section>
 
 
+		<!-------------------------------------------- blog ------------------------------------> 
+
+		<section nojs-menu-section id="blog">
+
+		</section>
   </body>
 </html>

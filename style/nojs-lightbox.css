@@ -6,7 +6,7 @@
 
 /* -- lightbox -- */
 
-[lightbox-target] {
+[nojs-lightbox-click] {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -18,10 +18,10 @@
   cursor: pointer;
 
 }
-[lightbox-target]:before,[lightbox-target]:after {
+[nojs-lightbox-click]:before,[nojs-lightbox-click]:after {
   display: none;
 }
-[lightbox-target]:checked + lightbox {
+[nojs-lightbox-click]:checked + lightbox {
   position: fixed;
   width: 100%;
   max-width: 800px;
@@ -35,7 +35,7 @@
   z-index: 1000;
   pointer-events: none;
 }
-[lightbox-target]:checked + lightbox:before {
+[nojs-lightbox-click]:checked + *:before {
   position: fixed;
   right: 0;
   left: 0;

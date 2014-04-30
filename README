@@ -1,47 +1,156 @@
 
-  HTML Syntax : slider-nojs
-  --------------------------------------------------------------
- 
-  <slider> 
-  
-    <input slide-target type="radio" name="groupName" checked>
-    <slide> <img/> </slide>
- 
-    <input slide-target type="radio" name="groupName">
-    <slide> <img/> </slide>
+/*###############################################################
+                          nojs - slider
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+   <div nojs-slider> 
+
+     <!--- slide 1 --->
+     <input nojs-slide-click type="radio" name="groupName" checked>
+     <div> <img/> </div>
+     
+     <!--- slide 2 --->
+     <input nojs-slide-click type="radio" name="groupName">
+     <div]> <img/> </div>
+      
+     <!--- slide 3 --->
+     <input nojs-slide-click type="radio" name="groupName">
+     <div> <img/> </div>  
+
+   </div> 
+*/
+
+/*###############################################################
+                       nojs - lightbox
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+
+   ------------
+    (1) single
+   ------------
+
+   <input nojs-lightbox-single nojs-lightbox-close type="checkbox" checked> 
+   <div> <img/> </div>
+
+   --------------------
+    (2) Between-slider
+   -------------------
+
+   <div nojs-slider> 
+
+     <!--- lightbox-close --->
+     <input nojs-lightbox-close type="radio" name="groupName_2" id="close" checked>
+
+     <!--- slide 1 --->
+     <input nojs-slide-click type="radio" name="groupName" checked>
+     <div> <img/> </div>
+
+     <!--- lightbox 1 --->
+     <input nojs-lightbox-click type="radio"> 
+     <div> <img/> </div>
+     
+     <!--- slide 2 --->
+     <input nojs-slide-click type="radio" name="groupName">
+     <div> <img/> </div>
+
+     <!--- lightbox 2 --->
+     <input nojs-lightbox-click type="radio"> 
+     <div> <img/> </div>
+
+   </div> 
+
+   ----------------------
+    (4) Target-to-slider
+   ----------------------
    
-    <input slide-target type="radio" name="groupName">
-    <slide> <img/> </slide>
+   <div nojs-slider>    <!--- Slider -->
+
+     <!--- slide 1 --->
+     <input nojs-slide-click type="radio" name="groupName_1" checked>
+     <label for="slide1"> <img/> </label>
      
-  </slider>
- 
+     <!--- slide 2 --->
+     <input nojs-slide-click type="radio" name="groupName_1">
+     <label for="slide2"> <img/> </label>
 
-  --------------------------------------------------------------
-  HTML Syntax : slider-nojs + lightbox-nojs
-  --------------------------------------------------------------
+   </div> 
 
-  <slider> 
- 
-    <!------- slide 1 ------->
-    <input slide-target type="radio" name="groupName" checked>
-    <slide> <img/> </slide>
- 
-    <input lightbox-target type="radio" name="lightboxGroupName"> 
-    <lightbox> <img/> </lightbox>
- 
-    <!------- slide 2 ------->
-    <input slide-target type="radio" name="groupName">
-    <slide> <img/> </slide>
- 
-    <input lightbox-target type="radio" name="lightboxGroupName"> 
-    <lightbox> <img/> </lightbox>
- 
-    <!------- slide 3 ------->
-    <input slide-target type="radio" name="groupName">
-    <slide> <img/> </slide>
- 
-    <input lightbox-target type="radio" name="lightboxGroupName"> 
-    <lightbox> <img/> </lightbox>
+   <div nojs-slider >   <!--- Lightbox -->
      
-  </slider>
+     <input nojs-lightbox-close type="radio" name="groupName_2" id="close">
 
+     <!--- slide 1 --->
+     <input nojs-slide-click type="radio" name="groupName_2" id="slide1">
+     <div> <img/> </div>
+     
+     <!--- slide 2 --->
+     <input nojs-slide-click type="radio" name="groupName_2" id="slide2">
+     <div> <img/> </div>
+
+   </div> 
+
+*/
+
+
+/*###############################################################
+                       nojs - menu
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+
+   -----------------
+    (1) with links
+   -----------------
+
+    <menu nojs-menu>
+      <li><a href="/home">home</a></li>
+      <li><a href="/about">about</a>
+        <menu>
+         <a href="/contact">contact</a>
+         <a href="/contact_info">info</a>
+         </menu>
+      </li>
+    </menu>
+
+   ------------------
+    (2) with Anchors
+   ------------------
+
+    <menu nojs-menu>
+      <li><a href="#home" id="home">home</a></li>
+      <li><a href="#about">about</a>
+        <menu>
+         <a href="#contact">contact</a>
+         <a href="#contact_info">info</a>
+         </menu>
+      </li>
+    </menu>
+  
+    <section nojs-menu-section id="home"> text </section>
+    <section nojs-menu-section id="about"> text </section>
+    <section nojs-menu-section id="contact"> text </section>
+    <section nojs-menu-section id="contact_info"> text </section>
+
+  ------------------
+    (2) with select
+   ------------------
+
+    <input nojs-menu type="checkbox" /> 
+    <menu>
+      <li><a href="#home" id="home">home</a></li>
+      <li><a href="#about">about</a>
+        <menu>
+         <a href="#contact">contact</a>
+         <a href="#contact_info">info</a>
+         </menu>
+      </li>
+    </menu>
+*/

@@ -5,7 +5,7 @@
 ###############################################################*/
 
 
-slider {
+[nojs-slider*="style-scroll-left"] {
   margin: 0 auto;
   height: 450px;
 	width: 100%;
@@ -15,10 +15,10 @@ slider {
 
 /* -- slider -- */
 
-body:hover slider {
+body:hover [nojs-slider*="style-scroll-left"] {
  // -webkit-transform: perspective(440px) rotateX(0deg);
 }
-slider {
+[nojs-slider*="style-scroll-left"] {
   overflow: hidden;
   border: 5px solid rgb(19, 0, 0);
   box-shadow: 0px 0px 30px 25px rgb(109, 84, 82);
@@ -28,30 +28,30 @@ slider {
 
 /* -- slide -- */
 
-slide {
+[nojs-slider*="style-scroll-left"] [nojs-slide-click] + slide {
   position: absolute;
   left: -100%;
   top: 0;
   display: block;  
   -webkit-transition: all .7s;
 }
-slide img {
+[nojs-slider*="style-scroll-left"] + * img {
   height: 100%;
   width: 100%;
 }
-[slide-target]:checked ~ slide {
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:checked ~ slide {
   left: 100%;
   pointer-events: none;
 }
-[slide-target]:checked + slide {
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:checked + slide {
   left:0;
   z-index: 5;
 }
 
-/* -- slide-target  -- */
+/* -- nojs-slide-click  -- */
 
-[slide-target] { cursor: pointer; }
-[slide-target]:before,[slide-target]:after {
+[nojs-slider*="style-scroll-left"] [nojs-slide-click] { cursor: pointer; }
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:before,[nojs-slider*="style-scroll-left"] [nojs-slide-click]:after {
   border-radius: 100% 0 0 100%;
   background: black;
   box-shadow: 0px 0px 5px 2px rgb(109, 84, 82);
@@ -61,16 +61,16 @@ slide img {
   color: white;
   -webkit-transition: -webkit-transform 100ms;
 }
-[slide-target]:active:before,
-[slide-target]:active:after,
-[slide-target]:hover:before,
-[slide-target]:hover:after{
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:active:before,
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:active:after,
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:hover:before,
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:hover:after{
   box-shadow: 0px 0px 10px 5px #680223;
 }
-[slide-target]:after{
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:after{
   right: -5px;
 }
-[slide-target]:before {
+[nojs-slider*="style-scroll-left"] [nojs-slide-click]:before {
   border-radius: 0 100% 100% 0;
   left: -5px;
 }

@@ -6,122 +6,7 @@ body {
 	padding-top: 120px;
 }
 
-
-input[name="main-menu"],input[name="sub-menu"]{
-display:none;
-}
-
-menu#main-menu {
-	margin: 0 auto;
-	position: fixed;
-	right: 0;
-	left: 0;
-	top: 7%;
-	padding: 0;
-	display: table;
-	width: 100%;
-	max-width: 900px;
-	background-color: #742E00;
-	-moz-box-shadow:  -1px 0px 15px 0px #9E5200;
-	-webkit-box-shadow: -1px 0px 15px 0px #9E5200;
-	box-shadow:  -1px 0px 15px 0px #9E5200;
-	//border-radius: 100px 0;
-	/*overflow: hidden;*/
-	z-index: 1000;
-}
-
-menu#main-menu > label {
-	vertical-align: middle;
-	display: table-cell;
-	border: 1px solid #7A5743;
-	border-right: 1px solid #000000;
-	color: white;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-	font-size: 1.2em;
-	line-height: 3;
-  font-weight: 600;
-  -webkit-transition: all 200ms;
-  -moz-transition: all 200ms;
-  -ms-transition: all 200ms;
-  -o-transition: all 200ms;
-  transition: all 200ms;
-}
-
-menu#main-menu > label {
-
-}
-
-menu#main-menu > label:hover,
-input#plugins:checked ~ menu#main-menu  label[for="plugins"] {
-    background-color: #92683A;
-    border-top-color: #92683A;
-}
-/*,
-input#plugins:checked ~ menu#main-menu label[for="plugins"] menu*/
-menu#main-menu > label:hover menu{
-border: 1px solid #555;
-	font-size: 1.1em;
-}
-
-menu#main-menu .sub-menu {
-	display: none;
-	display: table;
-	position: absolute;
-	top: 60px;	
-	padding: 0;
-	font-size: 0;
-	margin: 0 auto;
-
-	background-color: rgba(255, 255, 255, 0.5);
-	color: rgb(97, 0, 0);
-	//border-radius: 5px 47px;
-	z-index: -1;
-	  -webkit-transition: top 200ms;
-  -moz-transition: top 200ms;
-  -ms-transition: top 200ms;
-  -o-transition: top 200ms;
-  transition: top 200ms;
-/*	overflow: hidden;*/
-
-}
-
-menu#main-menu .sub-menu label:hover,
-input#slider:checked ~ menu#main-menu  label[for="slider"]{
-	background-color: rgba(107, 107, 107, 0.5);
-}
-
-menu#main-menu .sub-menu label{
-	vertical-align: middle;
-	display: table-cell;
-		padding: 0 20px;
-  -webkit-transition: all 200ms;
-  -moz-transition: all 200ms;
-  -ms-transition: all 200ms;
-  -o-transition: all 200ms;
-  transition: all 200ms;
-}
-search,
-slider{
-display: none !important;
-}
-/*input#plugins:checked ~*/
- input#search:checked ~ search,
- input#slider:checked ~ slider {
-	display: block !important;
-}
-#home-page{
-display: none;
-
-
-}
-input#home:checked ~ #home-page {
-	display: block;
-}/*
-logo:before { content: "no-js"; }
-logo:after { content: "nojs"; }
-logo:hover:before { content: "nojs"; }
-logo:hover:after { content: "nojs";}*/
-#home-page{
+section#home{
 height: 100%;
 position: fixed;
 width: 100%;
@@ -142,10 +27,89 @@ logo {
 	box-shadow: 0 0 740px 240px rgb(66, 66, 66);
 	border: 10px solid rgba(0, 0, 0, 0.25);
 }
-#home-page:hover logo{
+#home:hover logo{
 text-shadow: 150px 15px 30px rgba(160, 134, 109, 0.5);
 margin-top: -50px;
 		-webkit-transform: perspective(440px) rotateX(370deg)  rotateY(0deg);
 font-size: 30em;
 border-radius: 0 900px;
+}
+[nojs-menu="main-menu"]  a.active {
+color:red;
+}
+[nojs-menu="main-menu"] {
+	margin: 0 auto;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 7%;
+	padding: 0;
+	display: table;
+	width: 100%;
+	max-width: 900px;
+	background-color: #742E00;
+	-moz-box-shadow:  -1px 0px 15px 0px #9E5200;
+	-webkit-box-shadow: -1px 0px 15px 0px #9E5200;
+	box-shadow:  -1px 0px 15px 0px #9E5200;
+	z-index: 1000;
+	font-size: 1.2em;
+}
+[nojs-menu="main-menu"] li {
+	display: table-cell;
+	  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+}
+[nojs-menu="main-menu"] a {
+	text-decoration: blink;
+	color: white;
+	line-height: 3;
+  font-weight: 600;
+	width: 100%;
+}
+[nojs-menu="main-menu"] > li:hover {
+    background-color: #92683A;
+    border-top-color: #92683A;
+}
+[nojs-menu="main-menu"] menu {
+	top: 58px;	
+	padding: 0;
+	font-size: 0;
+	margin: 0 auto;
+	display: block !important;
+	background-color: rgba(255, 255, 255, 0.5);
+	-webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  -ms-transition: all 200ms;
+  -o-transition: all 200ms;
+  transition: all 200ms;
+
+}
+[nojs-menu="main-menu"] menu a {
+	color: rgb(97, 0, 0);
+	display: table-cell;
+	width: auto;
+	padding: 0 20px;
+}
+[nojs-menu="main-menu"] menu a:hover {
+	background-color: rgba(107, 107, 107, 0.5);
+}
+[nojs-menu="main-menu"] > li:hover menu{
+	border: 1px solid #555;
+	font-size: 1.1em;
+}
+article {
+	background: beige;
+	display: inline-block;
+	width: 50%;
+	padding: 10px;
+	border: 3px solid antiquewhite;
+	margin: 5px 0;
+}
+#slider article {
+width: 79%;
+height: 465px;
+overflow: hidden;
 }

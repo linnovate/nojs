@@ -1,144 +1,360 @@
 
-
 /*###############################################################
-                            slider
+                          nojs - slider
 ###############################################################*/
 
 /* --------------------------------------------------------------
  * HTML Sintaxs
  * --------------------------------------------------------------
- *
- * <slider> 
- * 
- *   <input slide-target type="radio" name="groupName" checked>
- *   <slide> <img/> </slide>
- *
- *   <input slide-target type="radio" name="groupName">
- *   <slide> <img/> </slide>
- *  
- *   <input slide-target type="radio" name="groupName">
- *   <slide> <img/> </slide>
- *    
- * </slider>
- *
+	 <div nojs-slider> 
+
+     <!--- slide 1 --->
+	   <input nojs-slide-click type="radio" name="groupName" checked>
+     <div> <img/> </div>
+     
+     <!--- slide 2 --->
+     <input nojs-slide-click type="radio" name="groupName">
+     <div]> <img/> </div>
+      
+     <!--- slide 3 --->
+     <input nojs-slide-click type="radio" name="groupName">
+     <div> <img/> </div>  
+
+   </div> 
 */
 
-
-/* -- 1 slider:slide -- */
-
-slider { 
+[nojs-slider] { 
   position: relative;
   display: inline-block;
   width: 100%;
   height: 100%;
 }
-
-slide { 
+[nojs-slide-click] + * { 
   width: 1000px;
   height: 500px;
 }
 
-/* -- 2 slider:treger -- */
-
-[slide-target] { width: 0; height: 0; margin: 0; }
-[slide-target]:before,[slide-target]:after {
+[nojs-slide-click] { width: 0; height: 0; margin: 0; }
+[nojs-slide-click]:before,[nojs-slide-click]:after {
   position: absolute;
   top: 50%;
   z-index: 10;
   font-size: 50px;
 }
-[slide-target]:before { content: '<'; left: 0; right: auto;  }
-[slide-target]:after  { content: '>'; left: auto;    right:0;  }
+[nojs-slide-click]:before { content: '<'; left: 0; right: auto;  }
+[nojs-slide-click]:after  { content: '>'; left: auto;    right:0;  }
 
-/* -- 3 slider:click -- */
-
-slide { display: none; }
+[nojs-slide-click] + * { display: none; }
 
 /* Loop: last next */
-[slide-target] ~ [slide-target]:after { display: none; }
+[nojs-slide-click] ~ [nojs-slide-click]:after { display: none; }
 
 /* Loop: first pevr */
-[slide-target] ~ [slide-target]:checked ~ [slide-target]:before { display: none; }
+[nojs-slide-click] ~ [nojs-slide-click]:checked ~ [nojs-slide-click]:before { display: none; }
 
 /* display */
-[slide-target]:checked + slide,
-[slide-target]:checked ~ [slide-target]:after {
+[nojs-slide-click]:checked + *,
+[nojs-slide-click]:checked ~ [nojs-slide-click]:after {
   display: block;
 }
-[slide-target]:checked:after,
-[slide-target]:checked:before,
-[slide-target]:checked ~ [slide-target] ~ [slide-target]:after { 
+[nojs-slide-click]:checked:after, [nojs-slide-click]:checked:before,
+[nojs-slide-click]:checked ~ [nojs-slide-click] ~ [nojs-slide-click]:after { 
   display: none; 
 }
 
-
 /*###############################################################
-                       slider + lightbox
+                       nojs - lightbox
 ###############################################################*/
 
 /* --------------------------------------------------------------
  * HTML Sintaxs
  * --------------------------------------------------------------
- *
- * <slider> 
- *
- *   <!------- slide 1 ------->
- *   <input slide-target type="radio" name="groupName" checked>
- *   <slide> <img/> </slide>
- *
- *   <input lightbox-target type="radio" name="lightboxGroupName"> 
- *   <lightbox> <img/> </lightbox>
- *
- *   <!------- slide 2 ------->
- *   <input slide-target type="radio" name="groupName">
- *   <slide> <img/> </slide>
- *
- *   <input lightbox-target type="radio" name="lightboxGroupName"> 
- *   <lightbox> <img/> </lightbox>
- *
- *   <!------- slide 3 ------->
- *   <input slide-target type="radio" name="groupName">
- *   <slide> <img/> </slide>
- *
- *   <input lightbox-target type="radio" name="lightboxGroupName"> 
- *   <lightbox> <img/> </lightbox>
- *    
- * </slider>
- *
+
+   ------------
+    (1) single
+   ------------
+
+   <input nojs-lightbox-single nojs-lightbox-close type="checkbox" checked> 
+   <div> <img/> </div>
+
+   --------------------
+    (2) Between-slider
+   -------------------
+
+   <div nojs-slider> 
+
+     <!--- lightbox-close --->
+     <input nojs-lightbox-close type="radio" name="groupName_2" id="close" checked>
+
+     <!--- slide 1 --->
+	   <input nojs-slide-click type="radio" name="groupName" checked>
+     <div> <img/> </div>
+
+     <!--- lightbox 1 --->
+		 <input nojs-lightbox-click type="radio"> 
+		 <div> <img/> </div>
+     
+     <!--- slide 2 --->
+	   <input nojs-slide-click type="radio" name="groupName">
+     <div> <img/> </div>
+
+     <!--- lightbox 2 --->
+		 <input nojs-lightbox-click type="radio"> 
+		 <div> <img/> </div>
+
+   </div> 
+
+   ----------------------
+    (4) Target-to-slider
+   ----------------------
+	 
+   <div nojs-slider>    <!--- Slider -->
+
+     <!--- slide 1 --->
+	   <input nojs-slide-click type="radio" name="groupName_1" checked>
+     <label for="slide1"> <img/> </label>
+     
+     <!--- slide 2 --->
+	   <input nojs-slide-click type="radio" name="groupName_1">
+     <label for="slide2"> <img/> </label>
+
+   </div> 
+
+   <div nojs-slider >   <!--- Lightbox -->
+     
+     <input nojs-lightbox-close type="radio" name="groupName_2" id="close">
+
+     <!--- slide 1 --->
+	   <input nojs-slide-click type="radio" name="groupName_2" id="slide1">
+     <div> <img/> </div>
+     
+     <!--- slide 2 --->
+	   <input nojs-slide-click type="radio" name="groupName_2" id="slide2">
+     <div> <img/> </div>
+
+   </div> 
+
 */
 
-[lightbox-target] { width: 0; height: 0; margin: 0; }
-[lightbox-target]:before, [lightbox-target]:after {
+/* ------------------- lightbox-general -------------------- */
+
+[nojs-lightbox-close] { width: 0; height: 0; margin: 0; }
+[nojs-lightbox-close]:before {
+ content: 'X';
+ display: block;
+ z-index: 1001;
+}
+[nojs-lightbox-close]:after {
+ content: '';
+ display: block;
+ background: black;
+ background: rgba(0, 0, 0, 0.8);
+ position: fixed;
+ top: 0;
+ left: 0;
+ bottom: 0;
+ right: 0;
+ z-index: 1000;
+}
+[nojs-lightbox-close]:checked:before, [nojs-lightbox-close]:checked:after {
+  display: none;
+}
+[nojs-lightbox-close] { padding: 100%; }
+
+/* -------------------- (1) lightbox-single -------------------- */
+
+[nojs-lightbox-single] + * { display: none; }
+[nojs-lightbox-single]:checked + * { display: block; }
+
+/* --------------------- (2) beetwen-slider -------------------- */
+
+[nojs-lightbox-click] { width: 0; height: 0; margin: 0; }
+[nojs-lightbox-click]:before, [nojs-lightbox-click]:after {
   position: absolute;
   top: 50%;
   z-index: 10;
   font-size: 50px;
 }
-[lightbox-target]:before { content: '<'; left: 0; right: auto;  }
-[lightbox-target]:after  { content: '>'; left: auto;    right:0;  }
+[nojs-lightbox-click]:before { content: '<'; left: 0; right: auto;  }
+[nojs-lightbox-click]:after  { content: '>'; left: auto;    right:0;  }
 
-/* -- 3 slider:click -- */
-
-lightbox { display: none; }
-[lightbox-target]:checked { display: block; }
-[lightbox-target]:checked
-[lightbox-target]:before, [lightbox-target]:after
+[nojs-lightbox-click] + * { display: none; }
 
 /* Loop: last next */
-[lightbox-target] ~ [lightbox-target]:after { display: none; }
+[nojs-lightbox-click] ~ [nojs-lightbox-click]:after { display: none; }
 
 /* Loop: first pevr */
-[lightbox-target] ~ [lightbox-target]:checked ~ [lightbox-target]:before { display: none; }
+[nojs-lightbox-click] ~ [nojs-lightbox-click]:checked ~ [nojs-lightbox-click]:before { display: none; }
 
 /* display */
-[lightbox-target]:checked + lightbox,
-[lightbox-target]:checked ~ [lightbox-target]:after {
+[nojs-lightbox-click]:checked + *,
+[nojs-lightbox-click]:checked ~ [nojs-lightbox-click]:after {
   display: block;
 }
-[lightbox-target]:checked:after,[lightbox-target]:checked:before,
-[lightbox-target]:checked ~ [lightbox-target] ~ [lightbox-target]:after { 
+[nojs-lightbox-click]:checked:after,[nojs-lightbox-click]:checked:before,
+[nojs-lightbox-click]:checked ~ [nojs-lightbox-click] ~ [nojs-lightbox-click]:after { 
   display: none; 
 }
 
+/* -------------------- (3) treger-to-slider ------------------- */
+
+.nothing {}
+
+
+/*###############################################################
+                       nojs - menu
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+
+   -----------------
+    (1) with links
+   -----------------
+
+    <menu nojs-menu>
+      <li><a href="/home">home</a></li>
+      <li><a href="/about">about</a>
+		  	<menu>
+		     <a href="/contact">contact</a>
+				 <a href="/contact_info">info</a>
+     		</menu>
+			</li>
+    </menu>
+
+   ------------------
+    (2) with Anchors
+   ------------------
+
+    <menu nojs-menu>
+      <li><a href="#home" id="home">home</a></li>
+      <li><a href="#about">about</a>
+		  	<menu>
+		     <a href="#contact">contact</a>
+				 <a href="#contact_info">info</a>
+     		</menu>
+			</li>
+    </menu>
+	
+		<section nojs-menu-section id="home"> text </section>
+		<section nojs-menu-section id="about"> text </section>
+		<section nojs-menu-section id="contact"> text </section>
+		<section nojs-menu-section id="contact_info"> text </section>
+
+  ------------------
+    (2) with select
+   ------------------
+
+		<input nojs-menu type="checkbox" /> 
+    <menu>
+      <li><a href="#home" id="home">home</a></li>
+      <li><a href="#about">about</a>
+		  	<menu>
+		     <a href="#contact">contact</a>
+				 <a href="#contact_info">info</a>
+     		</menu>
+			</li>
+    </menu>
+*/
+
+[nojs-menu] * { display: inline-block; }
+[nojs-menu] * > menu { display: none; position: absolute; margin: 0; padding: 0; }
+[nojs-menu] *:hover > menu { display: block; }
+[nojs-menu] *:target { color: red; } 
+
+[nojs-menu-section] { display: none; }
+[nojs-menu-section]:target { display: block; }
+
+input[nojs-menu] { width: 0; height: 0; margin: 0; cursor: pointer; }
+input[nojs-menu]:before { content: '=';	position: relative;	z-index: 1001; } 
+input[nojs-menu]:after {
+   content: '';
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 right: 0;
+	 z-index: 1000;
+   display: none; 
+}
+input[nojs-menu] + * { display: none; position: absolute; z-index: 1000; }
+input[nojs-menu]:checked + * { display: block; }
+input[nojs-menu]:checked:after { display: block; }
+
+
+/*###############################################################
+                       nojs - tabs
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+
+
+
+*/
+
+/*###############################################################
+                       nojs - search
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Sintaxs
+ * --------------------------------------------------------------
+
+
+
+*/
+
+search hr{margin-top: 50px;}
+[search-target] { 
+	width: 160px;
+	height: 0;
+	margin: 0; 
+}
+
+[search-target]:before{
+	content: attr(data-label);
+	color: rgb(46, 29, 0);
+	padding: 13px 50px;
+	background-color: antiquewhite;
+	border-radius: 0 100px;
+}
+
+[search-target]:hover:before {
+	background-color: rgb(218, 125, 1);
+}
+
+[search] {
+	width:0;
+	height: 150px;
+	float: left;
+	-webkit-transition: all .7s;
+	-moz-transition: all .7s;
+	-ms-transition: all .7s;
+	-o-transition: all .7s;
+	transition: all .7s;
+}
+search { 
+	width: 100%;
+	max-width: 1025px;
+	margin: auto;
+	min-height: 600px;
+}	
+[search] img { width: 100%;  height: 100%;}
+[search] { /*display:none;*/ }
+
+[search-target="all"]:checked	~ [search],
+[search-target="test-1"]:checked	~ [search*="test-1"],
+[search-target="test-2"]:checked	~ [search*="test-2"],
+[search-target="test-3"]:checked	~ [search*="3"],
+[search-target="test-4"]:checked	~ [search*="test-4"] { 
+	width: 225px;
+	border: 1px solid #e4e4e4;
+	padding: 5px;
+	margin: 9px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
 
 

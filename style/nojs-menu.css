@@ -1,0 +1,251 @@
+
+
+/*###############################################################
+                           Menu (style)
+###############################################################*/
+
+/* --------------------------- rest  ------------------------- */
+
+[nojs-menu="rest"]{
+
+}
+
+
+/* ---------------------------- mac  ------------------------- */
+
+.mac {
+-webkit-transform: perspective(840px);
+}
+[nojs-menu="mac"] { 
+	/*-webkit-transition: all .7s;
+	-moz-transition: all .7s;
+	-ms-transition: all .7s;
+	-o-transition: all .7s;
+	transition: all .7s;*/
+  -webkit-transform:  rotateY(0deg) rotateX(63deg) rotateZ(0deg) ;
+  background-color: aquamarine;
+	border-radius: 5px;
+	height: 40px;
+} 
+
+[nojs-menu="mac"] li { 
+   -webkit-transform:rotateY(0deg) rotateX(63deg) rotateZ(0deg) ;
+}
+
+[nojs-menu="mac"] a { 
+
+}
+[nojs-menu="mac"]:hover {
+
+}
+[nojs-menu="mac"]:hover li{
+
+}
+
+/* ----------------------------- d3  ------------------------- */
+
+[nojs-menu="d3"] {
+	//padding: 0;
+	display: inline-block;
+	float: left;
+	max-width: 900px;width: 50px;
+	padding: 13px;
+	-webkit-transform: rotate(90deg);
+	-webkit-transition: all .7s;
+	-moz-transition: all .7s;
+	-ms-transition: all .7s;
+	-o-transition: all .7s;
+	transition: all .7s;
+}
+[nojs-menu="d3"]:before { 
+	content: ':-)';
+	color: rgba(219, 219, 32, 0.78);
+	text-shadow: 0px 0px 5px rgb(255, 0, 245);
+	font-size: 35px;
+	background: teal;
+	padding: 10px 8px 15px 8px;
+	position: rel
+}
+article:hover [nojs-menu="d3"]:before { 
+	content: ':---)';
+}
+article:hover [nojs-menu="d3"] {
+width: 100%;
+-webkit-transform: rotate(0deg);
+}
+[nojs-menu="d3"] li {
+	-webkit-transition: all .7s;
+	-moz-transition: all .7s;
+	-ms-transition: all .7s;
+	-o-transition: all .7s;
+	transition: all .7s;
+display: inline-block;
+background-color: #007747;
+}
+[nojs-menu="d3"] li { 
+border-radius: 100% 0;
+background-color: #1BACA6;
+font-size: 0;
+
+}
+[nojs-menu="d3"] li:hover{
+-webkit-transform: perspective(140px) rotateZ(-360deg);
+box-shadow: 3px 7px 6px 0px red;
+}
+article:hover [nojs-menu="d3"] > li {
+padding: 13px 40px;
+height: 100%;
+border-radius: 0 20px;
+font-size: 1.2em;
+
+	/*font-size: 1.2em;
+	text-decoration: blink;
+  border: 1px solid #7A5743;
+	border-right: 1px solid #000000;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+	line-height: 3;
+  font-weight: 600;
+	display: block;
+width: 100%;*/
+}/*
+[nojs-menu="d3"] a {
+line-height: 3; font-size: 1.2em;
+}
+[nojs-menu="d3"] * + *  {
+font-size: 0px;
+width: 0;
+}*/
+
+
+/* --------------------------- main  ------------------------- */
+
+[nojs-menu="main"]{
+	padding: 0;
+	display: table;
+	width: 100%;
+	max-width: 900px;
+	background-color: #007747;
+}
+[nojs-menu="main"] * { padding: 0; }
+[nojs-menu="main"] > li { position: relative;display: table-cell; }
+[nojs-menu="main"] a {
+	text-decoration: blink;
+  border: 1px solid #7A5743;
+	border-right: 1px solid #000000;
+	color: white;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+	font-size: 1.2em;
+	line-height: 3;
+  font-weight: 600;
+	width: 100%;
+	display: block;
+}
+[nojs-menu="main"] menu {
+	top: 58px;
+	padding: 0;
+	margin: 0 auto;
+	background-color: rgba(255, 255, 255, 0.5);
+	color: rgb(97, 0, 0);
+}
+[nojs-menu="main"] menu > a {
+	display: table-cell; vertical-align: middle;
+	width: auto;
+	padding: 0 30px;
+	color: black;
+}
+[nojs-menu="main"] a:target, [nojs-menu="main"] a:hover{
+  background-color: #78B89E;
+}
+
+/* ------------------------- mobile  ------------------------- */
+
+input[nojs-menu] {
+	float: left;
+	margin: 0px 0 35px 0;
+}
+input[nojs-menu]:before {
+content: '=';
+position: relative;
+z-index: 1001;
+font-size: 35px;
+background: teal;
+padding: 0px 10px;
+}
+input[nojs-menu]:hover:before { background: rgb(4, 167, 167); }
+input[nojs-menu] + * {
+background: azure;
+padding: 0;
+margin: 0;
+margin: 40px 0 0 0;
+top: auto;
+border: 1px solid;
+border-radius: 5px;
+}
+input[nojs-menu] + * menu {
+	background: azure;
+	padding: 0;
+	top: auto;
+	border: 1px solid;
+}
+input[nojs-menu] + * a {
+	padding: 15px;
+	text-decoration: blink;
+}
+[nojs-menu="uppercase"] * {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0 5px;
+	text-transform: uppercase;
+	text-decoration: blink;
+}
+
+/* --------------------------- fixed  ------------------------- */
+
+[nojs-menu="fixed"] {
+	position: fixed;
+	left: 30px;
+	top: 30%;
+	bottom: 0;
+	margin: auto;
+}
+
+[nojs-menu="fixed"] menu {
+	padding: 0px 0px 0px 10px;
+	margin: -50px 0 0 65px;
+}
+[nojs-menu="fixed"] menu a + a { 
+	margin-left: 5px;
+}
+[nojs-menu="fixed"] > * { 
+	display: block;
+}
+[nojs-menu="fixed"] > * + * { 
+	margin-top: 5px;
+}
+
+[nojs-menu="fixed"] a {
+	padding: 15px;
+	background: beige;
+	text-decoration: blink;
+display: inline-block;
+	color: black;
+	border-radius: 25px 0;
+	border-bottom: 3px solid sandybrown;
+}
+
+[nojs-menu="fixed"] a:target, [nojs-menu="fixed"] a:hover{
+	background-color: #F8E5C3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
