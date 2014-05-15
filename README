@@ -1,10 +1,31 @@
 
+-----------------
+
+1. slider
+ 
+2. lightbox
+
+3. menu
+
+4. tabs
+
+5. accordion
+
+-----------------
+
+1. transform
+
+2. transition
+
+3. animation
+
+
 /*###############################################################
                           nojs - slider
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
    <div nojs-slider> 
 
@@ -28,15 +49,17 @@
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
 
    ------------
-    (1) single
+    (1) Lightbox
    ------------
-
-   <input nojs-lightbox-single nojs-lightbox-close type="checkbox" checked> 
-   <div> <img/> </div>
+   <div nojs-lightbox >
+      <img/>
+       <input nojs-lightbox-click type="checkbox" > 
+       <div> <img/> </div>
+    </div>
 
    --------------------
     (2) Between-slider
@@ -52,7 +75,7 @@
      <div> <img/> </div>
 
      <!--- lightbox 1 --->
-     <input nojs-lightbox-click type="radio"> 
+     <input nojs-lightbox-item type="radio"> 
      <div> <img/> </div>
      
      <!--- slide 2 --->
@@ -60,37 +83,7 @@
      <div> <img/> </div>
 
      <!--- lightbox 2 --->
-     <input nojs-lightbox-click type="radio"> 
-     <div> <img/> </div>
-
-   </div> 
-
-   ----------------------
-    (4) Target-to-slider
-   ----------------------
-   
-   <div nojs-slider>    <!--- Slider -->
-
-     <!--- slide 1 --->
-     <input nojs-slide-click type="radio" name="groupName_1" checked>
-     <label for="slide1"> <img/> </label>
-     
-     <!--- slide 2 --->
-     <input nojs-slide-click type="radio" name="groupName_1">
-     <label for="slide2"> <img/> </label>
-
-   </div> 
-
-   <div nojs-slider >   <!--- Lightbox -->
-     
-     <input nojs-lightbox-close type="radio" name="groupName_2" id="close">
-
-     <!--- slide 1 --->
-     <input nojs-slide-click type="radio" name="groupName_2" id="slide1">
-     <div> <img/> </div>
-     
-     <!--- slide 2 --->
-     <input nojs-slide-click type="radio" name="groupName_2" id="slide2">
+     <input nojs-lightbox-item type="radio"> 
      <div> <img/> </div>
 
    </div> 
@@ -103,7 +96,7 @@
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
 
    -----------------
@@ -138,19 +131,47 @@
     <section nojs-menu-section id="about"> text </section>
     <section nojs-menu-section id="contact"> text </section>
     <section nojs-menu-section id="contact_info"> text </section>
-
-  ------------------
-    (2) with select
-   ------------------
-
-    <input nojs-menu type="checkbox" /> 
-    <menu>
-      <li><a href="#home" id="home">home</a></li>
-      <li><a href="#about">about</a>
-        <menu>
-         <a href="#contact">contact</a>
-         <a href="#contact_info">info</a>
-         </menu>
-      </li>
-    </menu>
 */
+
+/*###############################################################
+                       nojs - transform
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-transform> </div> 
+
+  <div nojs-transform="{top / bottom / right / left / front / back / middle}"> </div>
+
+*/
+
+/*###############################################################
+                       nojs - transition
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-transition> </div> 
+
+  <div nojs-transition=""> </div> 
+
+*/
+
+/*###############################################################
+                       nojs - animation
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-animation> </div> 
+
+  <div nojs-animation=""> </div> 
+
+*/
+

@@ -1,12 +1,147 @@
 
 /*###############################################################
+                       nojs - transform
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-transform> </div> 
+
+  <div nojs-transform="{top / bottom / right / left / front / back / middle}"> </div>
+
+  <div nojs-transform="box circle">
+    <div></div>   <!-- top -->
+    <div></div>   <!-- right -->
+    <div></div>   <!-- bottom -->
+    <div></div>   <!-- left -->
+    <div></div>   <!-- front -->
+    <div></div>   <!-- back -->
+    <div></div>   <!-- middle -->
+  </div>
+
+*/
+
+[nojs-transform] { 
+
+border: 1px solid;
+background-color: rgba(0, 0, 0, 0.1);
+display: inline-block;
+padding: 50px;
+-webkit-perspective: 440px;
+-webkit-transform-style: preserve-3d;
+}
+[nojs-transform*="top"] { 
+-webkit-transform: rotateX(90deg);
+-webkit-transform-origin: top;
+}
+[nojs-transform*="bottom"] { 
+-webkit-transform: rotateX(-90deg);
+-webkit-transform-origin: bottom;
+}
+[nojs-transform*="right"] { 
+-webkit-transform: rotateY(90deg);
+-webkit-transform-origin: right;
+}
+[nojs-transform*="left"] { 
+-webkit-transform: rotateY(-90deg);
+-webkit-transform-origin: left;
+}
+[nojs-transform*="front"] { 
+-webkit-transform: rotateY(0deg);
+-webkit-transform-origin: center;
+}
+[nojs-transform*="back"] { 
+-webkit-transform: rotateY(0deg);
+-webkit-transform-origin: center;
+}
+[nojs-transform*="middle"] { 
+-webkit-transform: rotateY(0deg);
+-webkit-transform-origin: center;
+}
+
+/* ---- circle ---- */
+
+[nojs-transform*="circle"] { 
+
+}
+
+/* ---- box ---- */
+
+[nojs-transform*="box"] { 
+
+}
+[nojs-transform*="box"]:nth-child(1) { 
+
+}
+[nojs-transform*="box"]:nth-child(2) { 
+
+}
+[nojs-transform*="box"]:nth-child(3) { 
+
+}
+[nojs-transform*="box"]:nth-child(4) { 
+
+}
+[nojs-transform*="box"]:nth-child(5) { 
+
+}
+[nojs-transform*="box"]:nth-child(6) { 
+
+}
+
+
+/*###############################################################
+                       nojs - transition
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-transition> </div> 
+
+  <div nojs-transition=""> </div> 
+
+*/
+
+[nojs-transition] {
+  -webkit-transition: all .7s;
+	-o-transition: all .7s;
+	-ms-transition: all .7s;
+	-mzo-transition: all .7s;
+	transition: all .7s;
+}
+
+
+/*###############################################################
+                       nojs - animation
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-animation> </div> 
+
+  <div nojs-animation=""> </div> 
+
+*/
+
+[nojs-animation] { 
+
+}
+
+
+/*###############################################################
                           nojs - slider
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
-	 <div nojs-slider> 
+   <div nojs-slider> 
 
      <!--- slide 1 --->
 	   <input nojs-slide-click type="radio" name="groupName" checked>
@@ -14,7 +149,7 @@
      
      <!--- slide 2 --->
      <input nojs-slide-click type="radio" name="groupName">
-     <div]> <img/> </div>
+     <div> <img/> </div>
       
      <!--- slide 3 --->
      <input nojs-slide-click type="radio" name="groupName">
@@ -25,13 +160,14 @@
 
 [nojs-slider] { 
   position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+  //display: inline-block;
+  //width: 100%;
+  //height: 100%;
 }
+[nojs-slider] img { width: 100% }
 [nojs-slide-click] + * { 
-  width: 1000px;
-  height: 500px;
+ // width: 1000px;
+  //height: 500px;
 }
 
 [nojs-slide-click] { width: 0; height: 0; margin: 0; }
@@ -40,6 +176,7 @@
   top: 50%;
   z-index: 10;
   font-size: 50px;
+	color:red;
 }
 [nojs-slide-click]:before { content: '<'; left: 0; right: auto;  }
 [nojs-slide-click]:after  { content: '>'; left: auto;    right:0;  }
@@ -67,15 +204,17 @@
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
 
    ------------
-    (1) single
+    (1) Lightbox
    ------------
-
-   <input nojs-lightbox-single nojs-lightbox-close type="checkbox" checked> 
-   <div> <img/> </div>
+   <div nojs-lightbox >
+			<img/>
+   		<input nojs-lightbox-click type="checkbox" > 
+   		<div> <img/> </div>
+		</div>
 
    --------------------
     (2) Between-slider
@@ -91,7 +230,7 @@
      <div> <img/> </div>
 
      <!--- lightbox 1 --->
-		 <input nojs-lightbox-click type="radio"> 
+		 <input nojs-lightbox-item type="radio"> 
 		 <div> <img/> </div>
      
      <!--- slide 2 --->
@@ -99,7 +238,7 @@
      <div> <img/> </div>
 
      <!--- lightbox 2 --->
-		 <input nojs-lightbox-click type="radio"> 
+		 <input nojs-lightbox-item type="radio"> 
 		 <div> <img/> </div>
 
    </div> 
@@ -136,63 +275,99 @@
 
 */
 
-/* ------------------- lightbox-general -------------------- */
+/* ------------------- lightbox -------------------- */
+
+[nojs-lightbox] { position: relative; }
+[nojs-lightbox] img { width: 100% }
+
+[nojs-lightbox-click] { width: 0; height: 0; margin: 0; }
+[nojs-lightbox-click]:after {
+  content: '';  display: block;
+  position: absolute; top: 0;	right: 0;	left: 0; bottom: 0;
+}
+[nojs-lightbox-click]:checked:before {
+  content: 'X';  display: block;
+	position: fixed; top: 0;
+  z-index: 1001;  color:red;
+}
+[nojs-lightbox-click]:checked:after {
+ content: '';  display: block;
+ background: black;
+ background: rgba(0, 0, 0, 0.8);
+ position: fixed;  top: 0; left: 0; bottom: 0; right: 0;
+ z-index: 1000;
+		//pointer-events: none;
+}
+
+[nojs-lightbox-click] + * { display: none; }
+[nojs-lightbox-click]:checked + * { 
+	display: block;
+	position: fixed; 	top: 0;	right: 0;	left: 0;	bottom: 0;
+	z-index: 1000;
+  max-width: 80%;
+  max-height: 90%;
+	margin: auto; 
+}
+
+/* -------------------- (1) lightbox in slider -------------------- */
 
 [nojs-lightbox-close] { width: 0; height: 0; margin: 0; }
 [nojs-lightbox-close]:before {
- content: 'X';
- display: block;
- z-index: 1001;
+  content: 'X';  display: block;
+	position: fixed; top: 0;
+  z-index: 1001;  color:red;
 }
 [nojs-lightbox-close]:after {
- content: '';
- display: block;
+ content: '';  display: block;
  background: black;
  background: rgba(0, 0, 0, 0.8);
- position: fixed;
- top: 0;
- left: 0;
- bottom: 0;
- right: 0;
+ position: fixed;  top: 0; left: 0; bottom: 0; right: 0;
  z-index: 1000;
+	//pointer-events: none;
 }
-[nojs-lightbox-close]:checked:before, [nojs-lightbox-close]:checked:after {
-  display: none;
+[nojs-lightbox-close]:checked { display: none; }
+
+[nojs-lightbox-item] { width: 0; height: 0; margin: 0; }
+[nojs-lightbox-close]:checked ~ [nojs-lightbox-item]:after {
+  content: '';  display: block;
+  position: absolute; top: 0;	right: 0;	left: 0; bottom: 0;  z-index: 0; 
 }
-[nojs-lightbox-close] { padding: 100%; }
+[nojs-lightbox-close]:checked ~ [nojs-lightbox-item]:before { display: none; }
 
-/* -------------------- (1) lightbox-single -------------------- */
+[nojs-lightbox-close]:checked ~ [nojs-slide-click]:checked ~ [nojs-lightbox-item] { display: block; }
+[nojs-lightbox-close]:checked ~ [nojs-slide-click]:checked ~ [nojs-lightbox-item] ~ [nojs-lightbox-item] { display: none; }
 
-[nojs-lightbox-single] + * { display: none; }
-[nojs-lightbox-single]:checked + * { display: block; }
+[nojs-lightbox-item] + * { display: none; }
+[nojs-lightbox-item]:checked + * { 
+	display: block;
+	position: fixed; 	top: 0;	right: 0;	left: 0;	bottom: 0;
+	z-index: 1000;
+  max-width: 80%;
+  max-height: 80%;
+	margin: auto; 
+}
 
-/* --------------------- (2) beetwen-slider -------------------- */
-
-[nojs-lightbox-click] { width: 0; height: 0; margin: 0; }
-[nojs-lightbox-click]:before, [nojs-lightbox-click]:after {
-  position: absolute;
+[nojs-lightbox-item]:before, [nojs-lightbox-item]:after {
+  position: fixed;
   top: 50%;
-  z-index: 10;
-  font-size: 50px;
+  z-index: 1010;
+  font-size: 50px; color:red;
 }
-[nojs-lightbox-click]:before { content: '<'; left: 0; right: auto;  }
-[nojs-lightbox-click]:after  { content: '>'; left: auto;    right:0;  }
-
-[nojs-lightbox-click] + * { display: none; }
+[nojs-lightbox-item]:before { content: '<'; left: 20%; right: auto;  }
+[nojs-lightbox-item]:after  { content: '>'; left: auto;    right:20%;  }
 
 /* Loop: last next */
-[nojs-lightbox-click] ~ [nojs-lightbox-click]:after { display: none; }
+[nojs-lightbox-item] ~ [nojs-lightbox-item]:after { display: none; }
 
 /* Loop: first pevr */
-[nojs-lightbox-click] ~ [nojs-lightbox-click]:checked ~ [nojs-lightbox-click]:before { display: none; }
+[nojs-lightbox-item] ~ [nojs-lightbox-item]:checked ~ [nojs-lightbox-item]:before { display: none; }
 
 /* display */
-[nojs-lightbox-click]:checked + *,
-[nojs-lightbox-click]:checked ~ [nojs-lightbox-click]:after {
+[nojs-lightbox-item]:checked + *, [nojs-lightbox-item]:checked ~ [nojs-lightbox-item]:after {
   display: block;
 }
-[nojs-lightbox-click]:checked:after,[nojs-lightbox-click]:checked:before,
-[nojs-lightbox-click]:checked ~ [nojs-lightbox-click] ~ [nojs-lightbox-click]:after { 
+[nojs-lightbox-item]:checked:after,[nojs-lightbox-item]:checked:before,
+[nojs-lightbox-item]:checked ~ [nojs-lightbox-item] ~ [nojs-lightbox-item]:after { 
   display: none; 
 }
 
@@ -206,7 +381,7 @@
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
 
    -----------------
@@ -288,19 +463,95 @@ input[nojs-menu]:checked:after { display: block; }
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
 
+  <div nojs-tabs>
+
+    <!--- tab 1 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="tabs" checked/>
+    <div></div>
+
+    <!--- tab 2 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
+    <div></div>
+
+    <!--- tab 3 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
+    <div></div>
+
+  </div>
+
+
+  ------------------
+    (2) with select
+  ------------------
+
+  <div nojs-tabs>
+
+    <!--- tab 1 --->
+		<input type="radio{OR:checkbox}" name="tabs" checked/>
+    <label>tab-label</label>
+		<div></div>
+
+    <!--- tab 2 --->
+		<input type="radio{OR:checkbox}" name="tabs"/>
+    <label>tab-label</label>
+		<div></div>
+
+    <!--- tab 3 --->
+		<input type="radio{OR:checkbox}" name="tabs"/>
+    <label>tab-label</label>
+		<div></div>
+
+  </div>
+
+  ------------------
+    (2) with select
+  ------------------
+
+  <div nojs-tabs>
+
+    <!--- tab 1 --->
+		<input type="radio{OR:checkbox}" name="tabs" checked/>
+    <label>tab-label</label>
+		<div></div>
+
+    <!--- tab 2 --->
+		<input type="radio{OR:checkbox}" name="tabs"/>
+    <label>tab-label</label>
+		<div></div>
+
+    <!--- tab 3 --->
+		<input type="radio{OR:checkbox}" name="tabs"/>
+    <label>tab-label</label>
+		<div></div>
+
+  </div>
 
 
 */
+
+[nojs-tabs] { position: relative; height: 200px; }
+[nojs-tabs] > input { margin: 0; height: 0; min-width: 100px; display: inline-block; }
+[nojs-tabs] > input:before{ content: attr(label); cursor: pointer; }
+
+[nojs-tabs] > input + * { display: none; }
+[nojs-tabs] > input:checked + * { display: block; }
+
+[nojs-tabs] > input + * {
+	position: absolute;
+	top: 30px;
+	height: 200px;
+	overflow: auto;
+}
 
 /*###############################################################
                        nojs - search
 ###############################################################*/
 
 /* --------------------------------------------------------------
- * HTML Sintaxs
+ * HTML Syntax
  * --------------------------------------------------------------
 
 
