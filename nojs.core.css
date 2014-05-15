@@ -160,14 +160,10 @@ padding: 50px;
 
 [nojs-slider] { 
   position: relative;
-  //display: inline-block;
-  //width: 100%;
-  //height: 100%;
 }
-[nojs-slider] img { width: 100% }
+[nojs-slider] img { width: 100%; }
 [nojs-slide-click] + * { 
- // width: 1000px;
-  //height: 500px;
+
 }
 
 [nojs-slide-click] { width: 0; height: 0; margin: 0; }
@@ -545,6 +541,48 @@ input[nojs-menu]:checked:after { display: block; }
 	height: 200px;
 	overflow: auto;
 }
+
+
+
+/*###############################################################
+                       nojs - accordion
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-accordion>
+
+    <!--- tab 1 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="accordion" checked/>
+    <div></div>
+
+    <!--- tab 2 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
+    <div></div>
+
+    <!--- tab 3 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
+    <div></div>
+
+  </div>
+
+*/
+
+[nojs-accordion] {  }
+[nojs-accordion] > input { 
+	margin: 0; height: 0;
+	min-width: 100px;
+	margin-bottom: 35px;
+	display: block; 
+	cursor: pointer;
+ }
+[nojs-accordion] > input:before{ content: attr(label); }
+
+[nojs-accordion] > input + * { display: none; }
+[nojs-accordion] > input:checked + * { display: block; }
+
 
 /*###############################################################
                        nojs - search

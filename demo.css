@@ -10,7 +10,9 @@ section#home{
 height: 100%;
 position: fixed;
 width: 100%;
+//display: block;
 }
+
 logo {
 	display: block;
 		margin-top: 75px;
@@ -109,7 +111,7 @@ article {
 	margin: 5px 0;
 }
 #slider article {
-width: 79%;
+width: 79%;/*
 height: 465px;
-overflow: hidden;
+overflow: hidden;*/
 }

@@ -5,11 +5,11 @@
  
 2. lightbox
 
-3. menu
+3. accordion 
 
-4. tabs
+4. menu
 
-5. accordion
+5. tabs
 
 -----------------
 
@@ -92,6 +92,33 @@
 
 
 /*###############################################################
+                       nojs - accordion
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-accordion>
+
+    <!--- tab 1 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="accordion" checked/>
+    <div></div>
+
+    <!--- tab 2 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
+    <div></div>
+
+    <!--- tab 3 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
+    <div></div>
+
+  </div>
+
+*/
+
+
+/*###############################################################
                        nojs - menu
 ###############################################################*/
 
@@ -131,6 +158,33 @@
     <section nojs-menu-section id="about"> text </section>
     <section nojs-menu-section id="contact"> text </section>
     <section nojs-menu-section id="contact_info"> text </section>
+*/
+
+
+/*###############################################################
+                       nojs - tabs
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-tabs>
+
+    <!--- tab 1 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="tabs" checked/>
+    <div></div>
+
+    <!--- tab 2 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
+    <div></div>
+
+    <!--- tab 3 --->
+		<input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
+    <div></div>
+
+  </div>
+
 */
 
 /*###############################################################

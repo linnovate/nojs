@@ -14,7 +14,25 @@
 
     <menu nojs-menu="main-menu">
       <li><a class="active" href="#home">home</a></li>
-      <li><a href="#about">about</a></li>
+      <!--<li><a href="#about">about</a></li>-->
+			<li><a>plugins</a>
+        <menu>
+         <a href="#slider">Slider</a>
+         <a href="#lightbox">Lightbox</a>
+				 <a href="#accordion">Accordion</a>
+         <a href="#menu">Menu</a>
+         <a href="#tabs">Tabs</a>
+         <a href="#search">Search</a>
+         </menu>
+      </li>
+      <li><a href="#nojscss">nojs-css3</a>
+        <menu>
+         <a href="#transform">Transform</a>
+         <a href="#transition">Transition</a>
+				 <a href="#animation">Animation</a>
+				 <a href="#d3">d3</a>
+        </menu>
+      </li>
  			<li><a href="#outsiteplugins">Out site plugins</a>
         <menu>
          <a href="#bootstrap">Bootstrap</a>
@@ -31,34 +49,15 @@
 		   		 </li>
 		      </menu>
 		    </li>
-
         </menu>
-      </li>
-      <li><a href="#nojscss">nojs-css3</a>
-        <menu>
-         <a href="#transform">Transform</a>
-         <a href="#transition">Transition</a>
-				 <a href="#animation">Animation</a>
-				 <a href="#d3">d3</a>
-        </menu>
-      </li>
-      <li><a>plugins</a>
-        <menu>
-         <a class="active" href="#slider">Slider</a>
-         <a href="#lightbox">Lightbox</a>
-				 <a href="#accordion">Accordion</a>
-         <a class="active" href="#menu">Menu</a>
-         <a href="#tabs">Tabs</a>
-         <a class="active" href="#search">Search</a>
-         </menu>
-      </li>
-      <li><a>games</a>
+      </li>      
+      <!--<li><a>games</a>
         <menu>
          <a href="#game1">game 1</a>
          <a href="#game2">game 2</a>
          </menu>
       </li>
-      <li><a href="#blog">blog</a></li>
+      <li><a href="#blog">blog</a></li>-->
     </menu>
 
     <!-------------------------------------------- home ------------------------------------> 
@@ -156,29 +155,29 @@
       </article>
     
       <article>
-        <slider nojs-slider>
+        <div nojs-slider>
 
           <!------- slide 1 ------->
           <input nojs-slide-click type="radio" name="slider2" checked/>
-          <slide><img src="images/1.jpg" /></slide>
+          <div><img src="images/1.jpg" /></div>
 
           <!------- slide 2 ------->
           <input nojs-slide-click type="radio" name="slider2"/>
-          <slide><img src="images/2.jpg" /></slide>
+          <div><img src="images/2.jpg" /></div>
 
           <!------- slide 3 ------->
           <input nojs-slide-click type="radio" name="slider2"/>
-          <slide><img src="images/3.jpg" /></slide>
+          <div><img src="images/3.jpg" /></div>
 
           <!------- slide 4 ------->
           <input nojs-slide-click type="radio" name="slider2"/>
-          <slide><img src="images/4.jpg" /></slide>
+          <div><img src="images/4.jpg" /></div>
 
           <!------- slide 5 ------->
           <input nojs-slide-click type="radio" name="slider2"/>
-          <slide><img src="images/5.jpg" /></slide>
+          <div><img src="images/5.jpg" /></div>
 
-        </slider>
+        </div>
       </article>
 
     </section>
@@ -354,6 +353,75 @@
         </div>
       </article>
 
+    </section>
+
+
+    <!-------------------------------------------- accordion ------------------------------------> 
+
+    <section nojs-menu-section id="accordion">
+
+      <article>
+        <div nojs-accordion >
+          <!--- tab 1 --->
+          <input label="accordion-label 1" type="radio" name="accordion" checked/>
+          <div>          search hr{margin-top: 50px;}
+          [search-target] { width: 160px;
+          height: 0;
+          margin: 0; 
+          }</div>
+          <!--- tab 2 --->
+          <input label="accordion-label 2" type="radio" name="accordion"/>
+          <div>[search-target]:hover:before {
+          background-color: rgb(218, 125, 1);
+          }
+</div>
+          <!--- tab 3 --->
+          <input label="accordion-label 3" type="radio" name="accordion"/>
+          <div>        [search-target="all"]:checked  ~ [search],
+          [search-target="test-1"]:checked  ~ [search*="test-1"],
+          [search-target="test-2"]:checked  ~ [search*="test-2"],
+          [search-target="test-3"]:checked  ~ [search*="3"],
+          [search-target="test-4"]:checked  ~ [search*="test-4"] { 
+            width: 225px;
+            border: 1px solid #e4e4e4;
+            padding: 5px;
+            margin: 9px;
+            background-color: rgba(255, 255, 255, 0.5);
+          }</div>
+
+        </div>
+      </article>
+      <article>
+        <div nojs-accordion >
+          <!--- tab 1 --->
+          <input label="checkbox-label 1" type="checkbox" name="accordion"/>
+          <div>          search hr{margin-top: 50px;}
+          [search-target] { width: 160px;
+          height: 0;
+          margin: 0; 
+          }</div>
+          <!--- tab 2 --->
+          <input label="checkbox-label 2" type="checkbox" name="accordion"/>
+          <div>[search-target]:hover:before {
+          background-color: rgb(218, 125, 1);
+          }
+</div>
+          <!--- tab 3 --->
+          <input label="checkbox-label 3" type="checkbox" name="accordion"/>
+          <div>        [search-target="all"]:checked  ~ [search],
+          [search-target="test-1"]:checked  ~ [search*="test-1"],
+          [search-target="test-2"]:checked  ~ [search*="test-2"],
+          [search-target="test-3"]:checked  ~ [search*="3"],
+          [search-target="test-4"]:checked  ~ [search*="test-4"] { 
+            width: 225px;
+            border: 1px solid #e4e4e4;
+            padding: 5px;
+            margin: 9px;
+            background-color: rgba(255, 255, 255, 0.5);
+          }</div>
+
+        </div>
+      </article>
     </section>
 
     <!------------------------------------------ search ------------------------------------> 

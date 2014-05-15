@@ -3,7 +3,16 @@
 /*###############################################################
                         slider (style)
 ###############################################################*/
-
+[nojs-slider*="style-scroll-left"]{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+[nojs-slider*="style-scroll-left"] img { width: 100% }
+[nojs-slider*="style-scroll-left"] [nojs-slide-click] + * { 
+ width: 1000px;
+  height: 500px;
+}
 
 [nojs-slider*="style-scroll-left"] {
   margin: 0 auto;
