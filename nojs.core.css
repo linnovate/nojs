@@ -581,7 +581,8 @@ input[nojs-menu]:checked:after { display: block; }
 [nojs-accordion] > input:before{ content: attr(label); }
 
 [nojs-accordion] > input + * { display: none; }
-[nojs-accordion] > input:checked + * { display: block; }
+[nojs-accordion] > input:checked + *,
+[nojs-accordion*="hover"] > input:hover + * { display: block; }
 
 
 /*###############################################################
