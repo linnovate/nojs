@@ -102,15 +102,15 @@
   <div nojs-accordion>
 
     <!--- tab 1 --->
-		<input label="tab-label" type="radio{OR:checkbox}" name="accordion" checked/>
+    <input label="tab-label" type="radio{OR:checkbox}" name="accordion" checked/>
     <div></div>
 
     <!--- tab 2 --->
-		<input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
+    <input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
     <div></div>
 
     <!--- tab 3 --->
-		<input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
+    <input label="tab-label" type="radio{OR:checkbox}" name="accordion"/>
     <div></div>
 
   </div>
@@ -172,15 +172,15 @@
   <div nojs-tabs>
 
     <!--- tab 1 --->
-		<input label="tab-label" type="radio{OR:checkbox}" name="tabs" checked/>
+    <input label="tab-label" type="radio{OR:checkbox}" name="tabs" checked/>
     <div></div>
 
     <!--- tab 2 --->
-		<input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
+    <input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
     <div></div>
 
     <!--- tab 3 --->
-		<input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
+    <input label="tab-label" type="radio{OR:checkbox}" name="tabs"/>
     <div></div>
 
   </div>
