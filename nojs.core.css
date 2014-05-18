@@ -1,5 +1,59 @@
 
 /*###############################################################
+                       nojs - alt
+###############################################################*/
+
+/* --------------------------------------------------------------
+ * HTML Syntax
+ * --------------------------------------------------------------
+
+  <div nojs-alt nojs-data-alt="asdfefasf sfs"> <img src="images/5.jpg" /> </div>
+
+*/
+
+[nojs-alt] {
+position: relative;
+}
+[nojs-alt]:hover:before { 
+	content: attr(nojs-text-alt);
+	position: absolute;
+	background: slategrey;
+	margin: 0px 0px 0px 0%;
+	border: 1px solid;
+	padding: 5px;
+	min-width: 100px;
+}
+/*[nojs-alt]:after {
+	content: '';
+	position: absolute;
+	border: solid;
+	border-width: 0 1px 1px 0;
+	padding: 5px;
+	-webkit-transform: rotate(-45deg);
+	background: slategrey;
+}*/
+[nojs-alt]:before { left:101%; right: auto; }
+[nojs-alt]:after { top:2%; }
+
+[nojs-alt*="left"]:before,[nojs-alt*="left"]:after { left:auto; right: 101%; }
+
+[nojs-alt*="top"]:before,[nojs-alt*="top"]:after { top:auto; bottom: 101%;  left: auto; right: auto; }
+[nojs-alt*="top"]:after { top:-2%; }
+
+[nojs-alt*="middle"]:before { 
+top: 0;
+right: 0;
+left: 0;
+bottom: 0;
+max-width: 100px;
+max-height: 60px;
+margin: auto;
+}
+
+[nojs-alt*="bottom"]:before { top:101%; right: auto;  left: auto; right: auto;  }
+[nojs-alt*="bottom"]:after { bottom:-2%; }
+
+/*###############################################################
                        nojs - transform
 ###############################################################*/
 
@@ -353,8 +407,8 @@
   z-index: 1010;
   font-size: 50px; color:red;
 }
-[nojs-lightbox-item]:before { content: '<'; left: 20%; right: auto;  }
-[nojs-lightbox-item]:after  { content: '>'; left: auto;    right:20%;  }
+[nojs-lightbox-item]:before { content: '<'; left: 10%; right: auto;  }
+[nojs-lightbox-item]:after  { content: '>'; left: auto;    right:10%;  }
 
 /* Loop: last next */
 [nojs-lightbox-item] ~ [nojs-lightbox-item]:after { display: none; }
@@ -532,17 +586,18 @@ input[nojs-menu]:checked:after { display: block; }
 
 */
 
-[nojs-tabs] { position: relative; height: 200px; }
+[nojs-tabs] { position: relative; height: 300px; }
 [nojs-tabs] > input { margin: 0; height: 0; min-width: 100px; display: inline-block; }
 [nojs-tabs] > input:before{ content: attr(label); cursor: pointer; }
 
+[nojs-tabs] > input:checked:before { background-color: black; color: white ; padding: 5px;}
 [nojs-tabs] > input + * { display: none; }
 [nojs-tabs] > input:checked + * { display: block; }
 
 [nojs-tabs] > input + * {
 	position: absolute;
-	top: 30px;
-	height: 200px;
+	top: 40px;
+	height: 270px;
 	overflow: auto;
 }
 
@@ -577,12 +632,13 @@ input[nojs-menu]:checked:after { display: block; }
 [nojs-accordion] {  }
 [nojs-accordion] > input { 
 	margin: 0; height: 0;
-	min-width: 100px;
+	min-width: 150px;
 	margin-bottom: 35px;
 	display: block; 
 	cursor: pointer;
  }
 [nojs-accordion] > input:before{ content: attr(label); }
+[nojs-accordion] > input:checked:before { background-color: black; color: white ; padding: 5px;}
 
 [nojs-accordion] > input + * { display: none; }
 [nojs-accordion] > input:checked + *,

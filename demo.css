@@ -1,4 +1,22 @@
 
+[nojs-alt] {
+position: relative;
+width: 290px;
+float: left;
+margin: 10px;
+}
+[nojs-menu-section] {
+padding-top:100px;
+}
+ img{
+width: 100%;
+height: 100%;
+}
+[nojs-accordion] img{
+width: 100%;
+height: 100%;
+}
+
 [nojs-transform] { 
 
 border: 1px solid  rgb(255, 255, 255);
@@ -9,9 +27,6 @@ padding: 5px;
 -webkit-transform-style: preserve-3d;
 }
 
-[nojs-transform] img{
-width: 100%;
-}
 body {
   background: black;
   text-align: center;
