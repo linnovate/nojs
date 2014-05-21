@@ -227,15 +227,15 @@ transform-origin: conter;
    <div nojs-slider> 
 
      <!--- slide 1 --->
-	   <input nojs-slide-click type="radio" name="groupName" checked>
+	   <input nojs-slider-click type="radio" name="groupName" checked>
      <div> <img/> </div>
      
      <!--- slide 2 --->
-     <input nojs-slide-click type="radio" name="groupName">
+     <input nojs-slider-click type="radio" name="groupName">
      <div> <img/> </div>
       
      <!--- slide 3 --->
-     <input nojs-slide-click type="radio" name="groupName">
+     <input nojs-slider-click type="radio" name="groupName">
      <div> <img/> </div>  
 
    </div> 
@@ -245,36 +245,41 @@ transform-origin: conter;
   position: relative;
 }
 [nojs-slider] img { width: 100%; }
-[nojs-slide-click] + * { 
+[nojs-slider-click] + * { 
 
 }
 
-[nojs-slide-click] { width: 0; height: 0; margin: 0; display: block; }
-[nojs-slide-click]:before,[nojs-slide-click]:after {
+[nojs-slider-click] { width: 0; height: 0; margin: 0; display: block;
+
+-webkit-appearance: none;
+-moz-appearance: none;
+
+ }
+[nojs-slider-click]:before,[nojs-slider-click]:after {
   position: absolute;
   top: 50%;
   z-index: 10;
   font-size: 50px;
 	color:red;
 }
-[nojs-slide-click]:before { content: '<'; left: 0; right: auto;  }
-[nojs-slide-click]:after  { content: '>'; left: auto;    right:0;  }
+[nojs-slider-click]:before { content: '<'; left: 0; right: auto;  }
+[nojs-slider-click]:after  { content: '>'; left: auto;    right:0;  }
 
-[nojs-slide-click] + * { display: none; }
+[nojs-slider-click] + * { display: none; }
 
 /* Loop: last next */
-[nojs-slide-click] ~ [nojs-slide-click]:after { display: none; }
+[nojs-slider-click] ~ [nojs-slider-click]:after { display: none; }
 
 /* Loop: first pevr */
-[nojs-slide-click] ~ [nojs-slide-click]:checked ~ [nojs-slide-click]:before { display: none; }
+[nojs-slider-click] ~ [nojs-slider-click]:checked ~ [nojs-slider-click]:before { display: none; }
 
 /* display */
-[nojs-slide-click]:checked + *,
-[nojs-slide-click]:checked ~ [nojs-slide-click]:after {
+[nojs-slider-click]:checked + *,
+[nojs-slider-click]:checked ~ [nojs-slider-click]:after {
   display: block;
 }
-[nojs-slide-click]:checked:after, [nojs-slide-click]:checked:before,
-[nojs-slide-click]:checked ~ [nojs-slide-click] ~ [nojs-slide-click]:after { 
+[nojs-slider-click]:checked:after, [nojs-slider-click]:checked:before,
+[nojs-slider-click]:checked ~ [nojs-slider-click] ~ [nojs-slider-click]:after { 
   display: none; 
 }
 
@@ -305,7 +310,7 @@ transform-origin: conter;
      <input nojs-lightbox-close type="radio" name="groupName_2" id="close" checked>
 
      <!--- slide 1 --->
-	   <input nojs-slide-click type="radio" name="groupName" checked>
+	   <input nojs-slider-click type="radio" name="groupName" checked>
      <div> <img/> </div>
 
      <!--- lightbox 1 --->
@@ -313,7 +318,7 @@ transform-origin: conter;
 		 <div> <img/> </div>
      
      <!--- slide 2 --->
-	   <input nojs-slide-click type="radio" name="groupName">
+	   <input nojs-slider-click type="radio" name="groupName">
      <div> <img/> </div>
 
      <!--- lightbox 2 --->
@@ -329,11 +334,11 @@ transform-origin: conter;
    <div nojs-slider>    <!--- Slider -->
 
      <!--- slide 1 --->
-	   <input nojs-slide-click type="radio" name="groupName_1" checked>
+	   <input nojs-slider-click type="radio" name="groupName_1" checked>
      <label for="slide1"> <img/> </label>
      
      <!--- slide 2 --->
-	   <input nojs-slide-click type="radio" name="groupName_1">
+	   <input nojs-slider-click type="radio" name="groupName_1">
      <label for="slide2"> <img/> </label>
 
    </div> 
@@ -343,11 +348,11 @@ transform-origin: conter;
      <input nojs-lightbox-close type="radio" name="groupName_2" id="close">
 
      <!--- slide 1 --->
-	   <input nojs-slide-click type="radio" name="groupName_2" id="slide1">
+	   <input nojs-slider-click type="radio" name="groupName_2" id="slide1">
      <div> <img/> </div>
      
      <!--- slide 2 --->
-	   <input nojs-slide-click type="radio" name="groupName_2" id="slide2">
+	   <input nojs-slider-click type="radio" name="groupName_2" id="slide2">
      <div> <img/> </div>
 
    </div> 
@@ -413,8 +418,8 @@ transform-origin: conter;
 }
 [nojs-lightbox-close]:checked ~ [nojs-lightbox-item]:before { display: none; }
 
-[nojs-lightbox-close]:checked ~ [nojs-slide-click]:checked ~ [nojs-lightbox-item] { display: block; }
-[nojs-lightbox-close]:checked ~ [nojs-slide-click]:checked ~ [nojs-lightbox-item] ~ [nojs-lightbox-item] { display: none; }
+[nojs-lightbox-close]:checked ~ [nojs-slider-click]:checked ~ [nojs-lightbox-item] { display: block; }
+[nojs-lightbox-close]:checked ~ [nojs-slider-click]:checked ~ [nojs-lightbox-item] ~ [nojs-lightbox-item] { display: none; }
 
 [nojs-lightbox-item] + * { display: none; }
 [nojs-lightbox-item]:checked + * { 

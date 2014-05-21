@@ -127,6 +127,10 @@ logo {
 	display: block;
 		margin-top: 75px;
 	-webkit-transform: perspective(840px) rotateY(0deg) rotateX(63deg) rotateZ(27deg) ;
+	-moz-transform: perspective(840px) rotateY(0deg) rotateX(63deg) rotateZ(27deg) ;
+	-ms-transform: perspective(840px) rotateY(0deg) rotateX(63deg) rotateZ(27deg) ;
+	-o-transform: perspective(840px) rotateY(0deg) rotateX(63deg) rotateZ(27deg) ;
+	transform: perspective(840px) rotateY(0deg) rotateX(63deg) rotateZ(27deg) ;
 	-webkit-transition: all 4s;
 	-moz-transition: all 4s;
 	-ms-transition: all 4s;
@@ -143,6 +147,10 @@ logo {
 text-shadow: 150px 15px 30px rgba(160, 134, 109, 0.5);
 margin-top: -50px;
 		-webkit-transform: perspective(440px) rotateX(370deg)  rotateY(0deg);
+		-moz-transform: perspective(440px) rotateX(370deg)  rotateY(0deg);
+		-ms-transform: perspective(440px) rotateX(370deg)  rotateY(0deg);
+		-o-transform: perspective(440px) rotateX(370deg)  rotateY(0deg);
+transform: perspective(440px) rotateX(370deg)  rotateY(0deg);
 font-size: 30em;
 border-radius: 0 900px;
 }
