@@ -1,4 +1,90 @@
+.ee{
+transform: rotateX(95deg) rotateY(0deg);
+perspective: 148em;
+transform-style: preserve-3d;
+}
+#transform article:nth-child(2)  {
+transform: rotateX(69deg) rotateY(-12deg) rotateZ(39deg);
+height: 400px;
+transition: all 7s;
+}
+#transform article:nth-child(2) [nojs-transform*="box"]{
+transform:rotateX(20deg) rotateY(-27deg) rotateZ(6deg);
+}
 
+
+#transform article:nth-child(2):hover {
+transform: rotateX(12deg) rotateY(-19deg) rotateZ(360deg);
+}
+#transform  article:nth-child(2) [nojs-transform*="box"]:nth-child(1) >*  {
+width: 99px;
+height: 290px;
+margin: -45px -139px;
+}
+#transform  article:nth-child(2) [nojs-transform*="box"]:nth-child(3) {
+transform: rotateX(-14deg) rotateY(1deg) rotateZ(56deg);
+top: 169px;
+box-shadow: 86px 45px 17px 11px red;
+}
+#transform  article:nth-child(2) [nojs-transform*="box"]:nth-child(3) >*  {
+backface-visibility: visible;
+-webkit-backface-visibility: visible;
+perspective: 1px;
+overflow: hidden;
+opacity: 1;
+width: 150px;
+height: 150px;
+
+
+}
+#transform article:nth-child(1){
+
+height: 400px;
+
+}
+
+#transform article:nth-child(1) [nojs-transform*="box"]:nth-child(1)  { 
+width: 100px;
+height: 100px;
+transform:rotateX(35deg) rotateY(-54deg);
+-webkit-transform:rotateX(35deg) rotateY(-54deg);
+}
+#transform  article:nth-child(1) [nojs-transform*="box"]:nth-child(1) >*  {
+backface-visibility: visible;
+-webkit-backface-visibility: visible;
+border-radius: 134px 0;
+overflow: hidden;
+opacity: 1;
+width: 150px;
+height: 150px;
+margin: -120px -169px;
+}
+#transform article:nth-child(1) [nojs-transform*="box"]:nth-child(3) >*  {
+backface-visibility: visible;
+border-radius: 70px;
+overflow: hidden;opacity: 1;
+}
+#transform article:nth-child(1) [nojs-transform*="box"]:nth-child(2)  { 
+width: 100px;
+height: 100px;margin: 17px 69px;
+transform: rotateX(95deg) rotateY(-45deg);
+}
+
+#transform article:nth-child(1) [nojs-transform*="box"]:nth-child(3)  { 
+width: 200px;
+height: 200px;
+transform: rotateX(19deg) rotateY(139deg);
+}
+#transform article:nth-child(1) [nojs-transform*="box"]:nth-child(4)  { 
+width: 150px;
+height: 150px;
+transform: rotateX(195deg) rotateY(80deg);
+}
+#transform article:nth-child(1) [nojs-transform*="box"]:nth-child(5)  { 
+width: 100px;
+height: 100px;
+transform: rotateX(5deg) rotateY(-45deg);
+}
 [nojs-alt] {
 position: relative;
 width: 290px;
@@ -19,12 +105,9 @@ height: 100%;
 
 [nojs-transform] { 
 
-border: 1px solid  rgb(255, 255, 255);
-background-color: rgba(0, 0, 0, 0.1);
 display: inline-block;
 padding: 5px;
--webkit-perspective: 440px;
--webkit-transform-style: preserve-3d;
+margin-right: 20px;
 }
 
 body {
