@@ -1,4 +1,28 @@
-.ee{
+
+
+
+article:nth-child(1) [nojs-transform^="box"]:nth-child(1) { 
+	position: relative;
+	width: 100px;
+	height: 100px;
+	-webkit-transform:  rotateX(45deg) rotateY(-45deg);
+	border-radius: 3px;
+}
+article:nth-child(1) [nojs-transform^="box"]:nth-child(2) { 
+	-webkit-transform: rotateX(7deg) rotateY(-45deg);
+}
+article:nth-child(1) [nojs-transform^="box"]:nth-child(3) { 
+  -webkit-transform: rotateX(-21deg) rotateY(32deg);
+}
+
+article:nth-child(2)  { 
+  -webkit-transform: rotateX(-21deg) rotateY(32deg);
+}
+
+article:nth-child(2):hover {
+  -webkit-transform: rotateX(-232deg) rotateY(-201deg);
+}
+/*.ee{
 transform: rotateX(95deg) rotateY(0deg);
 perspective: 148em;
 transform-style: preserve-3d;
@@ -85,6 +109,8 @@ width: 100px;
 height: 100px;
 transform: rotateX(5deg) rotateY(-45deg);
 }
+
+*/
 [nojs-alt] {
 position: relative;
 width: 290px;

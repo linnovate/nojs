@@ -29,7 +29,7 @@ position: relative;
 	border: solid;
 	border-width: 0 1px 1px 0;
 	padding: 5px;
-	-webkit-transform: rotate(-45deg);
+	-webkit-transform:  rotate(-45deg);
 	background: slategrey;
 }*/
 [nojs-alt]:before { left:101%; right: auto; }
@@ -54,7 +54,7 @@ margin: auto;
 [nojs-alt*="bottom"]:after { bottom:-2%; }
 
 /*###############################################################
-                       nojs - transform
+                       nojs-transform
 ###############################################################*/
 
 /* --------------------------------------------------------------
@@ -65,113 +65,87 @@ margin: auto;
 
   <div nojs-transform="{top / bottom / right / left / front / back / middle}"> </div>
 
-  <div nojs-transform="box circle">
-    <div></div>   <!-- top -->
-    <div></div>   <!-- right -->
-    <div></div>   <!-- bottom -->
-    <div></div>   <!-- left -->
-    <div></div>   <!-- front -->
-    <div></div>   <!-- back -->
-    <div></div>   <!-- middle -->
+  <div nojs-transform="box">
+    <div nojs-transform="top"> </div>   <!-- top -->
+    <div nojs-transform="bottom"> </div>   <!-- bottom -->
+    <div nojs-transform="right"> </div>   <!-- right -->
+    <div nojs-transform="left"> </div>   <!-- left -->
+    <div nojs-transform="front"> </div>   <!-- front -->
+    <div nojs-transform="back"> </div>   <!-- back -->
+    <div nojs-transform="middle"> </div>   <!-- middle -->
+  </div>
+
+  <div nojs-transform="circle">
+    <div nojs-transform="top"> </div>   <!-- top -->
+    <div nojs-transform="bottom"> </div>   <!-- bottom -->
+    <div nojs-transform="right"> </div>   <!-- right -->
+    <div nojs-transform="left"> </div>   <!-- left -->
+    <div nojs-transform="front"> </div>   <!-- front -->
+    <div nojs-transform="back"> </div>   <!-- back -->
+    <div nojs-transform="middle"> </div>   <!-- middle -->
   </div>
 
 */
 
 [nojs-transform] { 
 	//perspective: 450px;
-	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
 }
-[nojs-transform*="1"] { 
--webkit-transform: matrix(0.9,0.2,0.4,1,0,0);
+[nojs-transform^="top"] { 
+-webkit-transform: rotateX(90deg);
+-webkit-transform-origin: top;
 }
-[nojs-transform*="2"] { 
--webkit-transform: matrix(0.5,-0.2,0.4,0.5,0,0);
-}
-[nojs-transform*="3"] { 
--webkit-transform: matrix(0.9,0,-0.7,0.5,0,0);
-}
-[nojs-transform*="top"] { 
-transform: rotateX(90deg);
-transform-origin: top;
-}
-[nojs-transform*="bottom"] { 
+[nojs-transform^="bottom"] { 
 -webkit-transform: rotateX(-90deg);
 -webkit-transform-origin: bottom;
 }
-[nojs-transform*="right"] { 
+[nojs-transform^="right"] { 
 -webkit-transform: rotateY(90deg);
 -webkit-transform-origin: right;
 }
-[nojs-transform*="left"] { 
+[nojs-transform^="left"] { 
 -webkit-transform: rotateY(-90deg);
 -webkit-transform-origin: left;
 }
-[nojs-transform*="front"] { 
+[nojs-transform^="front"] { 
 -webkit-transform: rotateY(0deg);
 -webkit-transform-origin: center;
 }
-[nojs-transform*="back"] { 
+[nojs-transform^="back"] { 
 -webkit-transform: rotateZ(0deg);
 -webkit-transform-origin: center;
 }
-[nojs-transform*="middle"] { 
+[nojs-transform^="middle"] { 
 -webkit-transform: rotateY(0deg);
 -webkit-transform-origin: center;
-}
-
-/* ---- circle ---- */
-
-[nojs-transform*="circle"] { 
-
 }
 
 /* ---- box ---- */
 
-[nojs-transform*="box"] { 
-position: relative;
-width: 100px;
-height: 100px;
-transform: rotateX(45deg) rotateY(-45deg);
-//box-shadow: 33px 35px 19px 2px #F00 inset;
-border-radius: 3px;
+[nojs-transform^="box"] { 
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border-radius: 3px;
 }
-[nojs-transform*="box"] > *{ 
-position: absolute;
-top: 0;
-bottom: 0;
-right: 0;
-left: 0;border: 5px solid royalblue;
-margin: auto;
-backface-visibility: visible;
 
-border-radius: 3px;
-overflow: hidden;
-opacity: 0.5;
+[nojs-transform^="box"] > [nojs-transform]{ 
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;border: 5px solid royalblue;
+	margin: auto;
+	-webkit-backface-visibility: visible;
+	border-radius: 3px;
+	overflow: hidden;
+	opacity: 0.5;
 }
-[nojs-transform*="box"] >*:nth-child(1) { 
-transform: rotateX(-90deg);
-transform-origin: top;
-}
-[nojs-transform*="box"] >*:nth-child(2) { 
-transform: rotateX(90deg);
-transform-origin: bottom;
-}
-[nojs-transform*="box"] >*:nth-child(3) { 
-transform: rotateY(-90deg);
-transform-origin: right;
-}
-[nojs-transform*="box"]>*:nth-child(4) { 
-transform: rotateY(90deg);
-transform-origin: left;
-}
-[nojs-transform*="box"]>*:nth-child(5) { 
-//transform: scale(0.5);
-//transform: translateZ(-450px);
-transform-origin: conter;
-}
-[nojs-transform*="box"]:nth-child(6) { 
-//transform: translateZ(0px);
-transform-origin: conter;
+
+/* ---- circle ---- */
+
+[nojs-transform^="circle"] { 
+
 }
 
 
@@ -197,6 +171,13 @@ transform-origin: conter;
 	transition: all .7s;
 }
 
+[nojs-transition="slow"] {
+  -webkit-transition: all 4s;
+	-o-transition: all 4s;
+	-ms-transition: all 4s;
+	-mzo-transition: all 4s;
+	transition: all 4s;
+}
 
 /*###############################################################
                        nojs - animation
